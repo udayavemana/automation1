@@ -1,0 +1,29 @@
+[root@ip-172-31-91-164 scripts]# cat first.sh 
+#!/bin/bash
+
+#Version: 1.0
+#Author : gangi
+
+echo "This is my first script "
+a=10
+
+echo "a value is = $a"
+
+echo "my shell name is =$SHELL"
+
+echo "today date is :`date`"
+[root@ip-172-31-91-164 scripts]# 
+
+
+
+[root@ip-172-31-91-164 scripts]# cat second.sh 
+#!/bin/bash
+
+echo "Enter your name"
+read name
+echo "my name is = $name"
+
+
+[root@ip-172-31-91-164 scripts]# 
+
+
