@@ -1,0 +1,119 @@
+[root@ip-172-31-91-164 scripts]# history
+    1  nmap -O 49.205.221.170
+    2  nmap -sL 49.205.221.170
+    3  nmap -sLPn 49.205.221.170
+    4  tcpdump
+    5  sudo yum instll tcpdump -y
+    6  yum install tcpdump -y
+    7  ifconfig
+    8  tcpdump -i eth0
+    9  host www.danone.com
+   10  host www.google.com
+   11  whoami
+   12  pwd
+   13  su - devopsadmin
+   14  useradd devopsadmin
+   15  id devopsadmin
+   16  userdel devopsadmin
+   17  id devopsadmin
+   18  useradd devopsadmin
+   19  id devopsadmin
+   20  passwd devopsadmin
+   21  su - devopsadmin
+   22  sudo su -
+   23  pwd
+   24  whoami
+   25  su - ec2-user
+   26  whoami
+   27  who am i
+   28  who
+   29  w
+   30  last
+   31  top
+   32  free 
+   33  free -m
+   34  su - ec2-user
+   35  su ec2-user
+   36  ls -ltr
+   37  ls -ltra
+   38  pwd
+   39  ls
+   40  cd /opt/
+   41  ls
+   42  cd /usr/
+   43  ls
+   44  ls -l
+   45  ls -lt
+   46  ls -ltr
+   47  cd
+   48  pwd
+   49  ls -ltr
+   50  ls -ltra
+   51  which ll
+   52  alias lt='ls -ltr'
+   53  alias
+   54  lt
+   55  which lt
+   56  exit
+   57  whoami
+   58  lt
+   59  ls -ltr
+   60  ls -ltra
+   61  vi .bashrc 
+   62  ls -ltr
+   63  lt
+   64  source .bashrc 
+   65  lt
+   66  id devopsadmin
+   67  echo $SHELL
+   68  who
+   69  date
+   70  echo "hai"
+   71  pwd
+   72  mkdir scripts
+   73  ls -ltr
+   74  pwd
+   75  cd /root/scripts/
+   76  pwd
+   77  vi first.sh
+   78  ls -ltr
+   79  pwd
+   80  date
+   81  ls -ltr
+   82  sh first.sh 
+   83  cat first.sh 
+   84  ls -ltr
+   85  sh first.sh 
+   86  cat first.sh 
+   87  vi second.sh
+   88  ls -ltr
+   89  sh second.sh 
+   90  sh -x first.sh 
+   91  ls -ltr
+   92  chmod 755 first.sh 
+   93  ls -ltr
+   94  ./first.sh 
+   95  ls -ltr
+   96  pwd
+   97  cd /opt/
+   98  pwd
+   99  /root/scripts/first.sh 
+  100  hostname
+  101  pwd
+  102  uptime
+  103  last
+  104  w
+  105  top
+  106  date
+  107  whoam
+  108  whoami
+  109  who am i
+  110  ls -ltr
+  111  cd 
+  112  ls -ltr
+  113  cd scripts/
+  114  ls -ltr
+  115  cat *.sh
+  116  cat first.sh 
+  117  cat second.sh 
+  118  history
