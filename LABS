@@ -1,0 +1,16 @@
+
+Lab- Enabling EPEL
+install the ansible
+
+322  curl http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm -O
+  323  ls -ltr
+  324  rpm -ivh epel-release-7-11.noarch.rpm 
+  325  ls -ltr
+  326  rm -f *.rpm
+  327  ls -ltr
+  328  vi epel.repo 
+  329  yum update 
+  330  yum install ansible -y
+  331  history
+  =========================
+  
