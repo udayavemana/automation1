@@ -14,3 +14,18 @@ install the ansible
   331  history
   =========================
   
+  
+  /root/scripts/jenkins/jobs/demos/config.xml
+  
+  /usr/jenkins/jobs/demos/config.xml
+  
+  
+  find / -name -type config.xml -exec 
+  
+  find with copy ?
+  
+  
+  
+  
+  
+  
