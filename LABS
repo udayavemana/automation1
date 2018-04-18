@@ -24,7 +24,47 @@ install the ansible
   
   find with copy ?
   
+  Lab:yum installation
+  (2 machines)
+  nginx
+  httpd
   
+  test the pages-->public ip--->
+  default replace with your own index.html
+  
+  =================================================
+  
+#!/bin/bash
+yum install unzip httpd -y
+sleep 3
+mkdir -p /root/apachesite
+cd /root/apachesite
+wget https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip
+unzip gh-pages.zip
+cd startbootstrap-coming-soon-gh-pages
+cp -r * /var/www/html
+systemctl enable httpd
+systemctl start httpd
+=================================================
+
+
+  #!/bin/bash
+yum remove unzip httpd -y
+rm -rf /root/apachesite
+rm -rf /var/www/html
+
+yum install unzip httpd -y
+sleep 3
+mkdir -p /root/apachesite
+cd /root/apachesite
+wget https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip
+unzip gh-pages.zip
+cd startbootstrap-coming-soon-gh-pages
+cp -r * /var/www/html
+systemctl enable httpd
+systemctl start httpd
+
+  =================================================
   
   
   
