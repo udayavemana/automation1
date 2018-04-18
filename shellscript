@@ -27,3 +27,16 @@ echo "my name is = $name"
 [root@ip-172-31-91-164 scripts]# 
 
 
+=================================
+
+Base pacakges
+#!/bin/bash
+echo "installing the base packages"
+
+yum update -y
+
+yum install httpd wget unzip bind-utils -y
+
+
+echo "this is my "
+=================================
