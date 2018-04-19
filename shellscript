@@ -40,3 +40,17 @@ yum install httpd wget unzip bind-utils -y
 
 echo "this is my "
 =================================
+deploy_nginx.sh
+
+#!/bin/bash
+
+
+git clone https://github.com/gangireddydanam/nginx.git
+cd nginx
+cp -r * /usr/share/nginx/html
+
+=================================
+
+
+
+
