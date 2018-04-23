@@ -93,6 +93,18 @@ echo "Test the page with your public ip"
 
 =================================
 
+Local to s3
+
+#!/bin/bash
+echo "Enter the file name"
+read filename
+echo "Enter the s3 Bucket name"
+read bucket
+aws s3 cp $filename s3://$bucket/
+
+=================================
+
+
 
 
 
