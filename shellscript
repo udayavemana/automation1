@@ -50,6 +50,48 @@ cd nginx
 cp -r * /usr/share/nginx/html
 
 =================================
+s3 with wget
+
+#!/bin/bash
+systemctl stop nginx
+rm -rf /usr/share/nginx/html/*
+mkdir static
+cd static
+wget https://s3.us-east-2.amazonaws.com/apache11/Run+Free+Website+Template+-+Free-CSS.com.zip
+unzip Run+Free+Website+Template+-+Free-CSS.com.zip
+cd run
+cp -r * /usr/share/nginx/html/
+systemctl start nginx
+
+=================================
+s3 with aws cli
+
+#!/bin/bash
+#Installing the aws cli
+yum install unzip -y
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+echo "AWS Cli Installation completed"
+
+echo "stopping nginx"
+systemctl stop nginx
+rm -rf static
+rm -rf /usr/share/nginx/html/*
+mkdir static
+cd static
+echo "Download content from s3"
+/usr/local/bin/aws s3 cp s3://apache11/static.zip .
+unzip static.zip
+cd run
+cp -r * /usr/share/nginx/html/
+echo "starting nginx"
+systemctl start nginx
+
+echo "Test the page with your public ip"
+
+
+=================================
 
 
 
