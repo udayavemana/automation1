@@ -1,4 +1,520 @@
 [root@ip-172-31-91-164 scripts]# history
+   1  nmap -O 49.205.221.170
+    2  nmap -sL 49.205.221.170
+    3  nmap -sLPn 49.205.221.170
+    4  tcpdump
+    5  sudo yum instll tcpdump -y
+    6  yum install tcpdump -y
+    7  ifconfig
+    8  tcpdump -i eth0
+    9  host www.danone.com
+   10  host www.google.com
+   11  whoami
+   12  pwd
+   13  su - devopsadmin
+   14  useradd devopsadmin
+   15  id devopsadmin
+   16  userdel devopsadmin
+   17  id devopsadmin
+   18  useradd devopsadmin
+   19  id devopsadmin
+   20  passwd devopsadmin
+   21  su - devopsadmin
+   22  sudo su -
+   23  pwd
+   24  whoami
+   25  su - ec2-user
+   26  whoami
+   27  who am i
+   28  who
+   29  w
+   30  last
+   31  top
+   32  free 
+   33  free -m
+   34  su - ec2-user
+   35  su ec2-user
+   36  ls -ltr
+   37  ls -ltra
+   38  pwd
+   39  ls
+   40  cd /opt/
+   41  ls
+   42  cd /usr/
+   43  ls
+   44  ls -l
+   45  ls -lt
+   46  ls -ltr
+   47  cd
+   48  pwd
+   49  ls -ltr
+   50  ls -ltra
+   51  which ll
+   52  alias lt='ls -ltr'
+   53  alias
+   54  lt
+   55  which lt
+   56  exit
+   57  whoami
+   58  lt
+   59  ls -ltr
+   60  ls -ltra
+   61  vi .bashrc 
+   62  ls -ltr
+   63  lt
+   64  source .bashrc 
+   65  lt
+   66  id devopsadmin
+   67  echo $SHELL
+   68  who
+   69  date
+   70  echo "hai"
+   71  pwd
+   72  mkdir scripts
+   73  ls -ltr
+   74  pwd
+   75  cd /root/scripts/
+   76  pwd
+   77  vi first.sh
+   78  ls -ltr
+   79  pwd
+   80  date
+   81  ls -ltr
+   82  sh first.sh 
+   83  cat first.sh 
+   84  ls -ltr
+   85  sh first.sh 
+   86  cat first.sh 
+   87  vi second.sh
+   88  ls -ltr
+   89  sh second.sh 
+   90  sh -x first.sh 
+   91  ls -ltr
+   92  chmod 755 first.sh 
+   93  ls -ltr
+   94  ./first.sh 
+   95  ls -ltr
+   96  pwd
+   97  cd /opt/
+   98  pwd
+   99  /root/scripts/first.sh 
+  100  hostname
+  101  pwd
+  102  uptime
+  103  last
+  104  w
+  105  top
+  106  date
+  107  whoam
+  108  whoami
+  109  who am i
+  110  ls -ltr
+  111  cd 
+  112  ls -ltr
+  113  cd scripts/
+  114  ls -ltr
+  115  cat *.sh
+  116  cat first.sh 
+  117  cat second.sh 
+  118  history
+  119  alias
+  120  PWD
+  121  pwd
+  122  ls -ltr
+  123  ifconfig
+  124  pwd
+  125  whoami
+  126  ls -ltr
+  127  mkdir test
+  128  lt
+  129  pwd
+  130  mkdir /opt/test
+  131  cd /opt/
+  132  ls -ltr
+  133  cd
+  134  ls -ltr
+  135  cd scripts/
+  136  ls -ltr
+  137  pwd
+  138  touch test
+  139  ls -ltr
+  140  rm test 
+  141  ls -ltr
+  142  touch test
+  143  rm -f test 
+  144  ls -ltr
+  145  ls -ltr
+  146  touch test[1-1000]
+  147  ls -ltr
+  148  rm -f test\[1-1000\] *
+  149  sl -ltr
+  150  ls -ltr
+  151  touch test{1..1000}
+  152  ls -ltr
+  153  ls -ltr
+  154  rm -f test2*
+  155  ls -ltr
+  156  ls -ltr test2*
+  157  ls -ltr test3*
+  158  rm -f test3*
+  159  rm -f *
+  160  ls -ltr
+  161  history
+  162  ls -ltr
+  163  mkdir test
+  164  ls -ltr
+  165  rm -rf test/
+  166  mkdir test
+  167  rmdir test/
+  168  ls -ltr
+  169  ls -ltr
+  170  id devopsadmin
+  171  ls -ltr
+  172  echo "date" 
+  173  echo "date" >test.sh
+  174  ls -ltr
+  175  sh test.sh 
+  176  chmod 755 test.sh 
+  177  ./test.sh 
+  178  ls -tr
+  179  ls -ltr
+  180  mv test.sh demo
+  181  ls -ltr
+  182  ls -ltr
+  183  mv demo /tmp/
+  184  ls -ltr /tmp/
+  185  pwd
+  186  cd /tmp/
+  187  ls -ltr
+  188  pwd
+  189  ls -lt
+  190  ls -ltr
+  191  cd -
+  192  mkdir demos
+  193  ls -ltr
+  194  mv demos/ testing
+  195  ls -ltr
+  196  mv testing/ /opt/
+  197  ls -ltr
+  198  ls -ltr /opt/
+  199  rm -rf /opt/testing/
+  200  ls -ltr /opt/
+  201  pwd
+  202  ls -ltr
+  203  mkdir jenkins
+  204  ls -ltr
+  205  pwd
+  206  pwd
+  207  cd jenkins/
+  208  ls -ltr
+  209  mkdir jobs
+  210  ls -ltr
+  211  pwd
+  212  cd jobs/
+  213  ls -ltr
+  214  pwd
+  215  mkdir demos
+  216  ls -ltr
+  217  pwd
+  218  cd demos/
+  219  ls -ltr
+  220  touch config.xm;
+  221  mv config.xm config.xml
+  222  ls -ltr
+  223  pwd
+  224  l -ltr
+  225  ls -ltr
+  226  pwd
+  227  cd
+  228  ls -ltr
+  229  pwd
+  230  mkdir -p jenkins/jobs/demos/
+  231  ls -ltr
+  232  pwd
+  233  ls -ltr jenkins/
+  234  ls -ltr jenkins/jobs/
+  235  ls -ltr jenkins/jobs/demos/
+  236  ls -ltr /root/jenkins/jobs/demos/
+  237  ls -ltr
+  238  tree
+  239  yum install tree -y
+  240  ls -ltr
+  241  ls -lRt jenkins/
+  242  tree jenkins/
+  243  touch jenkins/jobs/demos/touch.xml
+  244  ls -ltr
+  245  pwd
+  246  cp -r jenkins/ /usr/
+  247  ls -ltr /usr/
+  248  cd /
+  249  cd usr
+  250  ls -ltr
+  251  cd /usr/
+  252  ls -ltr
+  253  pwd
+  254  cd -
+  255  ls -ltr
+  256  cd 
+  257  cd scripts/
+  258  ls -ltr
+  259  cd jenkins/jobs/demos/
+  260  ls -ltr
+  261  pwd
+  262  cp config.xml /usr/jenkins/jobs/demos/
+  263  ls -ltr /usr/jenkins/jobs/demos/
+  264  date
+  265  pwd
+  266  ls -ltr
+  267  vi config.xml
+  268  ls -ltr
+  269  cp config.xml /usr/jenkins/jobs/demos/
+  270  cd /usr/jenkins/jobs/demos/
+  271  ls -ltr
+  272  pwd
+  273  cp /root/scripts/jenkins/jobs/demos/config.xml .
+  274  ls -ltr
+  275  cp config.xml config.xml.20180417
+  276  ls -ltr
+  277  vi config.xml
+  278  ls -ltr
+  279  cp config.xml.20180417 config.xml
+  280  ls -ltr
+  281  wc -l config.xml
+  282  vi config.xml
+  283  ls -ltr
+  284  wc -l config.xml
+  285  wc config.xml
+  286  wc -w config.xml
+  287  wc -c config.xml
+  288  wc config.xml
+  289  ls -ltr
+  290  pwd
+  291  history
+  292  yum insall git -y
+  293  yum install git -y
+  294  pwd
+  295  cd
+  296  git clone https://github.com/gangireddydanam/automation1.git
+  297  ls -ltr
+  298  cd automation1/
+  299  ls -ltr
+  300  history >>linux-commands 
+  301  wc -l linux-commands 
+  302  uniq -c linux-commands 
+  303  git status
+  304  git add linux-commands 
+  305  git commit -m "c1"
+  306  git push 
+  307  ls -ltr
+  308  cd 
+  309  ls -ltr
+  310  id devopsadmin
+  311  chage -l devopsadmin
+  312  cd /etc/yum.repos.d/
+  313  ls -ltr
+  314  ls -ltrh
+  315  vi redhat-rhui.repo 
+  316  vi redhat-rhui.repo 
+  317  yum install httpd 
+  318  yum install ansible
+  319  ls -ltr
+  320  owd
+  321  pwd
+  322  curl http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm -O
+  323  ls -ltr
+  324  rpm -ivh epel-release-7-11.noarch.rpm 
+  325  ls -ltr
+  326  rm -f *.rpm
+  327  ls -ltr
+  328  vi epel.repo 
+  329  yum update 
+  330  yum install ansible -y
+  331  history
+  332  cd
+  333  ls -ltr
+  334  cd -
+  335  ls -ltr
+  336  pwd
+  337  ls -ltr
+  338  more epel-testing.repo 
+  339  more redhat-rhui.repo
+  340  more redhat-rhui.repo
+  341   less redhat-rhui.repo
+  342  more redhat-rhui.repo 
+  343  ls -ltr
+  344  cd
+  345  ls -ltr
+  346  find 
+  347  find / -name config.xml 
+  348  find / -name jenkins -type d  
+  349  touch /opt/test/demos{1..100}
+  350  ls -ltr /opt/test/
+  351  find / -name demo*
+  352  find / -name demo* -exec rm -f {}\;
+  353  find / -name demo* -exec rm -f {} \;
+  354  find / -name -type f demo* -exec rm -f {} \;
+  355  find / -type -name  demo* -exec rm -f {} \;
+  356  find / -name demo* -type f -exec rm -f {} \;
+  357  find / -name demo* -type f -exec ls -ltr {} \;
+  358  find / -name demo* -type d -exec ls -ltr {} \;
+  359  exit
+  360  pwd
+  361  echo $HTTP_RPOXY
+  362  ping www.google.com
+  363  pwd
+  364  ls -ltr
+  365  cd scripts/
+  366  ls -ltr
+  367  vi base.sh
+  368  ls -ltr
+  369  sh base.sh 
+  370  arch
+  371  uname -a
+  372  yum install httpd -y
+  373  cat /etc/redhat-release 
+  374  systemctl enable httpd
+  375  systemctl start httpd
+  376  whoami
+  377  netstat -anlp
+  378  netstat -anlp | grep ":80"
+  379  netstat -anlp | grep ":22"
+  380  netstat -anlp | grep ":80"
+  381  yum install nginx -y
+  382  systemctl stop httpd
+  383  netstat -anlp | grep ":80"
+  384  systemctl start nginx
+  385  netstat -anlp | grep ":80"
+  386  cd /etc/nginx/
+  387  ls -ltr
+  388  pwd
+  389  cd /etc/httpd/
+  390  ls -ltr
+  391  pwd
+  392  cd /var/
+  393  ls -ltr
+  394  cd log
+  395  ls -ltr
+  396  pwd
+  397  cd nginx/
+  398  ls -ltr
+  399  cd ..
+  400  pwd
+  401  cd nginx/
+  402  ls -ltr
+  403  pwd
+  404  ls -ltr
+  405  more error.log 
+  406  ls -ltr
+  407  more access.log 
+  408  cd /usr/share/nginx/html/
+  409  ls -ltr
+  410  mv index.html index.html.old
+  411  ls -ltr
+  412  echo "this is my nginx server" >index.html
+  413  l s-ltr
+  414  ls -ltr
+  415  cat index.html
+  416  cd /etc/nginx/
+  417  ls -ltr
+  418  cd /var/log/nginx/
+  419  ls -ltt
+  420  less access.log 
+  421  systemctl stop nginx
+  422  systemctl start httpd
+  423  pwd
+  424  cd /etc/httpd/
+  425  l s-ltr
+  426  pwd
+  427  ls -ltr
+  428  cd logs
+  429  ls -ltr
+  430  pwd
+  431  more error_log 
+  432  ls -ltr
+  433  more access_log 
+  434  more error_log 
+  435  cd /var/www/html/
+  436  ls -ltr
+  437  pwd
+  438  echo "this is apache page" >index.html
+  439  ls -ltr
+  440  cd
+  441  pwd
+  442  ls -ltr
+  443  mkdir websites
+  444  pwd
+  445  ls -ltr
+  446  cd websites/
+  447  ls -ltr
+  448  pwd
+  449  wget http://www.free-css.com/assets/files/free-css-templates/download/page226/company.zip
+  450  wget https://github.com/BlackrockDigital/startbootstrap-coming-soon/archive/gh-pages.zip
+  451  ls -ltr
+  452  unzip gh-pages.zip 
+  453  ls -ltr
+  454  cd startbootstrap-coming-soon-gh-pages/
+  455  ls -ltr
+  456  pwd
+  457  cp -r * /var/www/html/
+  458  cd /var/www/html/
+  459  ls -ltr
+  460  pwd
+  461  cp -r * /usr/share/nginx/html/
+  462  netstat -anlp | grep ":80"
+  463  systemctl stop httpd
+  464  sysctl start nginx
+  465  systemctl start nginx
+  466  netstat -anlp | grep ":80"
+  467  yum remove nginx httpd -y
+  468  systemctl nginx
+  469  systemctl start nginx
+  470  systemctl start httpd
+  471  cd 
+  472  ls -ltr
+  473  cd websites/
+  474  ls -ltr
+  475  cd /var/www/
+  476  ls ltr
+  477  ls -ltr
+  478  rm -rf html/
+  479  cd
+  480  cd scripts/
+  481  ls -ltr
+  482  pwd
+  483  vi apache.sh
+  484  ls -ltr
+  485  chmod 755 apache.sh 
+  486  ls -ltr
+  487  ./apache.sh 
+  488  vi retry.sh
+  489  ls-ltr
+  490  sh retry.sh 
+  491  vi /etc/hostname 
+  492  ifconfig
+  493  vi /etc/hosts
+  494  hostname -F /etc/hostname
+  495  hostname
+  496  vi /etc/hostname 
+  497  vi /etc/hosts
+  498  hostname -F /etc/hostname 
+  499  hostname
+  500  exit
+  501  yum install telnet nc -y
+  502  telent 172.31.85.181 22
+  503  telnet 172.31.85.181 22
+  504  pwd
+  505  vi nginx.pem
+  506  pwd
+  507  vi webserver.pem
+  508  ls -ltr
+  509  chmod 400 webserver.pem 
+  510  ssh -i webserver.pem ec2-user@172.31.85.181
+  511  hostname
+  512  ssh -i webserver.pem ec2-user@172.31.85.181
+  513  alias nginx='ssh -i webserver.pem ec2-user@172.31.85.181'
+  514  nginx
+  515  ssh devopsadmin@172.31.85.181
+  516  history
     1  nmap -O 49.205.221.170
     2  nmap -sL 49.205.221.170
     3  nmap -sLPn 49.205.221.170
