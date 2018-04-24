@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+import boto3
+ec2 = boto3.resource('ec2')
+for instance in ec2.instances.all():
+    print instance.id, instance.state
+
+
+
+To list s3 buckets
+
+import boto3
+# Let's use Amazon S3
+s3 = boto3.resource('s3')
+# Print out bucket names
+for bucket in s3.buckets.all():
+  print (bucket.name)
+
+
