@@ -103,8 +103,48 @@ read bucket
 aws s3 cp $filename s3://$bucket/
 
 =================================
+Dynamically changing the servername with shell script
+#!/bin/bash
+echo "Enter your hostname"
+read servername
+echo "you are going to set hostname is $servername"
+echo "$servername" >/etc/hostname
+
+#privateip=$((ifconfig eth0 | grep -w 'inet' | awk '{print $2}'))
+privateip=$(hostname -I)
+echo "$privateip $servername" >>/etc/hosts
+hostname -F /etc/hostname
+echo "your servername is :`hostname` "
+echo "your servername is :$HOSTNAME "
+
+=================================
 
 
+
+Enabling epel
+#!/bin/bash
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-7*.rpm
+
+
+yum update
+
+yum install nginx -y
+ 
+ /etc/nginx
+ main file : /etc/nginx/nginx.conf
+
+ /usr/share/nginx/html/---->webstefiles
+
+ systemctl start nginx
+ systemctl stop nginx
+ systemctl enable nginx
+
+
+netstat -anlp | grep ":80"
+
+ps -ef | grep nginx
 
 
 
