@@ -1,0 +1,36 @@
+
+Enabling epel
+#!/bin/bash
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-7*.rpm
+
+
+yum update
+
+yum install nginx -y
+ 
+ /etc/nginx
+ main file : /etc/nginx/nginx.conf
+
+ /usr/share/nginx/html/---->webstefiles
+
+ systemctl start nginx
+ systemctl stop nginx
+ systemctl enable nginx
+
+
+netstat -anlp | grep ":80"
+
+ps -ef | grep nginx
+=========================
+yum install httpd -y
+
+
+systemctl start httpd
+ systemctl stop httpd
+ systemctl enable httpd
+
+
+ ps -ef | grep httpd
+ netstat -anlp | grep ":80"
