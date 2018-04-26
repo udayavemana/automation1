@@ -73,6 +73,10 @@ systemctl start httpd
   nc -vz 35.173.213.2 22
   nc -vz 35.173.213.2 22
   
+  Daet:26/
+  
+  http://scm-to-ec2-lab-2120142306.us-east-1.elb.amazonaws.com/
+  s3/github
   
   
   
