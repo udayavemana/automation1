@@ -213,6 +213,15 @@ else echo -n "down"
     fi
 done
 
+======================================
+sshlogin
+[root@bastionserver devopsadmin]# cat /tmp/login.sh
+#!/bin/bash
+echo "Connecting to servers"
+echo "Enter server you want to connect"
+read servername
+ssh -i /tmp/sshlogin.pem ec2-user@$servername
+[root@bastionserver devopsadmin]# 
 
 
 
