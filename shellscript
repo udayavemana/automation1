@@ -145,6 +145,77 @@ yum install nginx -y
 netstat -anlp | grep ":80"
 
 ps -ef | grep nginx
+===============================
+
+#!/bin/bash
+
+oslist=filename
+
+for serername in `cat /opt/scripts/serverlist`
+#Connecting to remote servers
+
+ssh devopsadmin@$servername
+#redirecting output of uname into filename
+uname >>$oslist
+
+done
+
+#priting the os list file
+cat $oslist
+#send the email with subject with attachment(filename)
+mail -s "OS lists" someone@somewhere.com -a $oslist
+
+
+ping script
+=============
+#!/bin/sh
+ 
+# -q quiet
+# -c nb of pings to perform
+echo "enter the name"
+read name
+ping -q -c5 $name > /dev/null
+ 
+#check previous command successful or not
+if  [$? -eq 0 ]
+then
+  echo "ok"
+fi
+
+
+
+
+
+  #!/bin/bash
+  webs=/home/devopsadmin/scripts/serverslist
+
+ for name in `cat $webs`; do 
+  ping -q -c5 $name > /dev/null
+
+  if [ $? -eq 0 ]; then
+      echo "$name --> OK "
+  else
+      echo "$name-->FAIL"
+  fi
+done
+
+
+
+
+
+
+#!/bin/bash
+for i in `sec 0 255`; do 
+    ping -c 1 $i >/dev/null 2>&1 
+    if [ "$?" = "0" ]; then 
+echo -n "up" 
+else echo -n "down" 
+    fi
+done
+
+
+
+
 
 
 
