@@ -1,0 +1,40 @@
+#!/bin/sh
+
+SERVICE='httpd'
+ 
+if ps -ef | grep -v grep | grep $SERVICE > /dev/null
+then
+    echo "$SERVICE service running, everything is fine"
+    rm -rf /var/www/html/*
+    echo "Deleted the content"
+
+    echo "Downloading the webstie cotent"
+    cd /opt/
+    sudo wget https://github.com/gangireddydanam/s3-to-ec2/archive/master.zip
+    sudo unzip master.zip
+    cd s3-to-ec2-master
+    sudo cp -r * /var/www/html/
+
+
+else
+    echo "$SERVICE is not running"
+    sudo systemctl start httpd 
+
+if ps -ef | grep -v grep | grep $SERVICE > /dev/null
+then
+    echo "$SERVICE service running, everything is fine"
+    sudo rm -rf /var/www/html/*
+    echo "Deleted the content"
+
+    echo "Downloading the webstie cotent"
+    cd /opt/
+    sudo wget https://github.com/gangireddydanam/s3-to-ec2/archive/master.zip
+    sudo unzip master.zip
+    cd s3-to-ec2-master
+    sudo cp -r * /var/www/html/
+
+   fi
+
+    
+fi
+ 
