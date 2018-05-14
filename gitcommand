@@ -1,0 +1,20 @@
+244  git branch
+  245  cd sparkjava-war-example/
+  246  git branch
+  247  git branch dev
+  248  git checkout dev
+  249  git brach
+  250  git branch
+  251  git status
+  252  touch devfile
+  253  git add devfile 
+  254  git commit -m "dev"
+  255  git config --global user.email gangireddydanam@gmail.com
+  256  git config --global user.name gangireddydanam
+  257  git commit -m "dev"
+  258  git checkout master
+  259  git merge 
+  260  git config merge.defaultToUpstream true
+  261  git merge 
+  262  git push origin dev
+  263  history
