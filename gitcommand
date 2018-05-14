@@ -18,3 +18,9 @@
   261  git merge 
   262  git push origin dev
   263  history
+=========================
+merge with master
+264  git checkout master
+  265  git merge dev
+  266  git push
+  267  history
