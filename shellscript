@@ -224,7 +224,29 @@ ssh -i /tmp/sshlogin.pem ec2-user@$servername
 [root@bastionserver devopsadmin]# 
 
 
+=======================================
+crontab-check
 
+#!/bin/bash
+ADMIN=Gangireddy_Danamreddy@mail.com
+crontab -l > /tmp/_file
+currentcron=/tmp/_file1
+diff /tmp/_file /tmp/_file1 |grep -v "You have mail in" >/tmp/lists
+[ ! -f "/tmp/lists" ] && { echo "Error: $0 file not found."; exit 2; }
+ 
+if [ -s "/tmp/lists" ] 
+then
+	echo "/tmp/lists has some data."
+        # do something as file has data
+        #send email logic
+        mail -s "New Crontab list on Host $(hostname) " $ADMIN < /tmp/lists
+else
+	echo "/tmp/lists is empty."
+        # do something as file is empty 
+        #no send email 
+fi
+=====================================================================
+crond service check
 
 
 
