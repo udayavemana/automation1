@@ -271,6 +271,16 @@ echo "$service at $host is stopped and cannot be started!!!" | mail -s "$subject
 fi
 fi
 ===========================================================
+userdata -advanced-ansbile
+
+useradd devopsadmin
+echo "devopsadmin ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
+sed -i 's/PasswordAuthentication no/PasswordAuthentication Yes/g' /etc/ssh/sshd_config
+service sshd restart
+yum install unzip bind-utils wget telnet -y
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-7*.rpm
 
 
 
