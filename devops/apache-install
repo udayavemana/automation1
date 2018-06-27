@@ -1,0 +1,20 @@
+#!/bin/sh
+#author:gangi
+#version:1.0
+#team:devops
+#purpose: apache installation
+echo "i am installaing apache" 
+
+yum install httpd -y
+echo "completed apache instalallation"
+echo "======================"
+echo "start apache"
+systemctl start httpd
+echo "apache started"
+ps -ef | grep httpd
+
+echo "creating the sample page"
+cd /var/www/html #apache pages lookup
+echo "this is test page" >index.html
+
+
