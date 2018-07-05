@@ -282,5 +282,9 @@ wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 #curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
 rpm -ivh epel-release-7*.rpm
 
+======================================================================
+13.232.139.49
+http://13.232.139.49/lb-1.wrf
+http://13.232.139.49/lb-2.wrf
 
 
