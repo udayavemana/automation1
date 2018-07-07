@@ -290,4 +290,6 @@ rpm -ivh epel-release-7*.rpm
 http://13.232.139.49/lb-1.wrf
 http://13.232.139.49/lb-2.wrf
 
+http://clb-demo-140576925.us-west-2.elb.amazonaws.com/cicd.zip
+
 
