@@ -38,6 +38,9 @@ yum update -y
 yum install httpd wget unzip bind-utils -y
 
 
+url:
+clb-demo-140576925.us-west-2.elb.amazonaws.com/cicd.zip
+
 echo "this is my "
 =================================
 deploy_nginx.sh
