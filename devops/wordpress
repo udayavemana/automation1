@@ -1,0 +1,16 @@
+#!/bin/sh
+#install apache and php dependencies
+yum install httpd php php-common php-mysql php-gd php-xml php-mbstring php-mcrypt 
+
+#start apache
+systemctl start httpd
+cd /tmp
+wget http://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz -C /var/www/html 
+cd /var/www/html/wordpress
+cp wp-config-sample.php wp-config.php
+sed 's/database_name_here/wordpress/g' wp-config.php
+sed 's/username_here/wordpress/g' wp-config.php
+sed 's/password_here/1qa2ws3ed/g' wp-config.php
+sed 's/localhost/wordpress.cgcwfbspk6kn.us-west-2.rds.amazonaws.com/g' wp-config.php
+systemctl restart httpd
