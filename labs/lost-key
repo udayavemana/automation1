@@ -1,0 +1,17 @@
+Download the pem file name called lost.pem and delete the pem file. Document the steps
+
+Create the two ec2 machines - redhat-t2.large and other is t2.micro
+bastion-t2.micro
+appserver- t2.large
+
+when i login to bastion, if run the hostname= bastion
+when i run the id devops --user id and group id 
+
+when i login to the app server, if i run the hostname=appserver
+when i run the id devops --user id and group id 
+
+Next password less setup between bastion and appserver.
+
+
+
+
