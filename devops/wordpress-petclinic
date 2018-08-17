@@ -39,6 +39,12 @@ TASK - Write an automation script to do the following process and result in a co
  wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
  rpm -ivh mysql57-community-release-el7-7.noarch.rpm
  yum install mysql-server*
+ 
+ Start the msyql server
+ service mysqld start
+  --->mysql -h localhost -u root -p 
+   -->SET GLOBAL validate_password.policy = 0;
+ 
 
 4.    Reset mysql root user password to welcome1 and run the provided Sql Script.
 
