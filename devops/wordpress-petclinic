@@ -44,6 +44,8 @@ TASK - Write an automation script to do the following process and result in a co
  service mysqld start
   --->mysql -h localhost -u root -p 
    -->SET GLOBAL validate_password.policy = 0;
+   ALTER USER 'root'@'localhost' IDENTIFIED BY '1qa2ws3ed';
+
  
 
 4.    Reset mysql root user password to welcome1 and run the provided Sql Script.
