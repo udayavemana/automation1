@@ -1,0 +1,21 @@
+Write a bash/python script or ansible playbook to setup a whole LAMP stack, PHP app can be Wordpress and DB can be MySQL-RDS. 
+
+AWS spot instances should be used to setup complete stack. Use spotinst(https://spotinst.com/) service(14 days trial available without creditcard). Create a auto-scalling group for web tier using spotinst elastigroup. Also create a script to test scale up/down logic either using Jmeter or Apache benchmark or any load generation tools. 
+
+The script should meet the below requirements
+        ● This script should install all components needed for a Wordpress website.
+        ● We should be able to run this script on a local machine or server and after execution of
+        the script it should have Wordpress Running via Nginx/Apache.
+        ● A database user for Wordpress should also be made automatically from within the script
+        and same should be set in Wordpress conf file.
+        ● Use ELB/ALB for load distribution. 
+        ● Scale-up should be triggered when group cpu average is above 70% for 5 mins.
+        ● Scale-down should be triggered when group cpu average is below 30% for 5 mins.
+        ● Auto scale-up/down web tier with test script.
+        ● Add README file with steps to execute/test code.
+
+Bonus Points for candidates :- 
+  1. Whoever complete within 24hr.
+  2. whoever complete within 48hr but code is well written with comments, documentation and error handling.
+
+Once you complete the assignment, please upload all files/docs to a bitbucket/github repo or zip code folder and reply it to all in the mail chain.
