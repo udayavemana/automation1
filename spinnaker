@@ -1,13 +1,1 @@
-#!/bin/bash
-/opt/spinnaker/bin/stop_spinnaker.sh
-apt-get update -y
-apt-get dist-upgrade -y --force-yes spinnaker
-/var/lib/dpkg/info/ca-certificates-java.postinst configure
-sed -i 's/name: .*/name: default/g' /opt/spinnaker/config/spinnaker-local.yml
-sed -i 's/defaultIAMRole: .*/defaultIAMRole: testing-BaseIAMRole-XID40NPP30RI/g' /opt/spinnaker/config/spinnaker-local.yml
-sed -i 's/SPINNAKER_AWS_ENABLED=false/SPINNAKER_AWS_ENABLED=true/g' /etc/default/spinnaker
-sed -i 's/SPINNAKER_AWS_DEFAULT_REGION=.*/SPINNAKER_AWS_DEFAULT_REGION=us-east-1/g' /etc/default/spinnaker
-mkdir /home/spinnaker/.aws/
-printf "[default]\naws_access_key_id= AKIAJCLNIQEUCJNQJE4Q\naws_secret_access_key= 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" > /home/spinnaker/.aws/credentials
-/opt/spinnaker/scripts/reconfigure_spinnaker.sh
-/opt/spinnaker/bin/start_spinnaker.sh
+test
