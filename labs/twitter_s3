@@ -1,0 +1,8 @@
+create a solutioon that grabs the latest tweet from a user specified twitter account and stores the tween as a json
+
+file in s3
+
+solution include lamda using node.js or python
+be able to take uname and pwd 
+save the tweet as a json file in s3
+next create a README file and send to 
