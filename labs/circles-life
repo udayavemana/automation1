@@ -1,0 +1,42 @@
+
+Write a bash script to subdivide a given CIDR /24 and smaller subnets into a pre-defined number of smaller subnets.
+
+After division IP addresses shouldn't be wasted, i.e. accumulation of your subdivisions should make up the divided subnet.
+
+Every subnet has 3 IP addresses reserved and not usable by hosts: network, broadcast, gateway.
+
+Show network/broadcast address, number of hosts and assign gateway. Gateway should be first IP available in divided subnet. Examples:
+
+INPUT: ./subnetter.sh 192.168.0.0/24 3
+
+OUTPUT:
+
+subnet=192.168.0.0/25 network=192.168.0.0 broadcast=192.168.0.127 gateway=192.168.0.1 hosts=125
+
+subnet=192.168.0.128/26 network=192.168.0.128 broadcast=192.168.0.191 gateway=192.168.0.129 hosts=61
+
+subnet=192.168.0.192/26 network=192.168.0.192 broadcast=192.168.0.255 gateway=192.168.0.193 hosts=61
+
+
+INPUT: ./subnetter.sh 192.168.0.0/24 4
+
+OUTPUT:
+
+subnet=192.168.0.0/26 network=192.168.0.0 broadcast=192.168.0.63 gateway=192.168.0.1 hosts=61
+
+subnet=192.168.0.64/26 network=192.168.0.64 broadcast=192.168.0.127 gateway=192.168.0.65 hosts=61
+
+subnet=192.168.0.128/26 network=192.168.0.128 broadcast=192.168.0.191 gateway=192.168.0.129 hosts=61
+
+subnet=192.168.0.192/26 network=192.168.0.192 broadcast=192.168.0.255 gateway=192.168.0.193 hosts=61
+
+
+INPUT: ./subnetter.sh 10.55.10.64/28 2
+
+OUTPUT:
+
+subnet=10.55.10.64/29 network=10.55.10.64 broadcast=10.55.10.71 gateway=10.55.10.65 hosts=5
+
+subnet=10.55.10.72/29 network=10.55.10.72 broadcast=10.55.10.79 gateway=10.55.10.73 hosts=5
+
+
