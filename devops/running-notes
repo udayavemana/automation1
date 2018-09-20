@@ -1,0 +1,500 @@
+AWS my architecture--160+
+aws 10 minutes
+aws quick labs
+aws reinvent
+aws faqs---exam
+====================
+
+Pre-Req
+github account
+AWS account
+
+Infrastructure
+---->Data center
+-->Storage components( object--s3(google drive) and block storage(disc))
+-->Network components--DNS--Route53
+-->Computing components(CPU and RAM)--Bare metal ---Hypervisor 
+
+
+
+Route53---NS, Hosted zones and record sets, TLD
+how name will be converted into ip address ?(name resolution)
+
+
+why we need external storage ?
+internal storage
+
+computing components --------n/w----------------------storage--SAN/NAS
+
+On-prem
+every company has their own dc
+
+power-----
+
+Projects---power stations ----substations---poles------home
+cloud
+
+
+dc----computing+network+storage-------client 
+cloud ----pay per service
+cloud providers(aws+azure+aliabab+gcp..)
+infra cost + upgradation + maintanance
+
+
+
+
+
+
+danone---on-prem
+
+aws--
+
+DC--region--geo separated location of dc related to aws
+az--availability zones
+regiono =2 az
+
+for ex:us-east-2 ( ohio)--Region name
+az names
+us-east-2a
+us-east-2b
+us-east-2c
+
+
+
+hypervisor
+
+vmware(workstation + ESxi), virtualbox, kvm,xen
+
+personal--windows 10 
+enterprise--windows server 2016
+
+softlayer---IBM private cloud
+on-site/on-prem
+Akamai
+
+Edge(h/w) location-cache component (AWS cloudfront)--static content
+------------------------------
+
+CDN- Content delivery network
+
+machine never understands names and it requires ip address for the n/w communication.
+what is the need of n/w ?
+n/w--data sharing
+servers always use physical communication with the ethernet/NIC card
+every nic is have ip address. 	
+
+
+=============================================
+Day:3
+IP address- Private ip and public ip(ifconfig/ipconfig)
+DNS(nslookup,host,digi)
+port ( netstat,lsof)
+ssh ( ssh,telnet)
+RDS,mstsc
+Remote login
+Operating systems and flavours
+
+lab:block website
+find your gateway  and ip address and subnet mas
+ping 10 websites(3 wront and 7 success) and increase the packet count
+nslookup for 10 websites(5 wrong websites and 5 success)
+
+IP address versions:IPv4(numeric) and IPV6(128bit---alpha numeric)
+IPV4(32 bit)
+(0-255)
+xxx.xxx.xxx.xxx
+
+Computer---------------Router/Nat Gateway/Nat Instance/Proxy(fwd)--------------------------internet
+
+if servers want to go to internt we use proxy or nat gateway
+ip addresses public and private
+Private ip address
+10.xx.xx.xx
+192.
+172
+it can be duplicate based on network zone.
+private ip adress area called a intranet.
+Privaete websites always have private ip.
+
+Public ip
+other than private series
+public ip address area called a internet(0.0.0.0).
+can be accessed from anywhere and unique(no duplicate)
+public websites will have  public ip address.
+
+
+
+To know ipaddress of your website/hostname/servername
+nslookup <websitename>/<hostname>/<servername>
+
+www.google.com ---------------------->DNS Server(NS)----www.google.com | 172.217.xxx and ipv6
+
+
+ping used to check up <websitename>/<hostname>/<servername> or responding or not.
+ping will send icmp(Internet chat msg protocal) packets.
+in AWS ping is disabled by default.
+in windows ping will send 4 icmp
+in unix its unlimited
+
+
+www.google.com
+
+Request format:
+protocal://<websitename>/Hostname/servername/IPaddress :<port>/contextroot
+
+
+mandatory: protocal
+ipaddress
+port
+
+ex:1
+https://www.google.com/
+protocal: https
+websitename: www.google.com
+port: 443
+contextroot: /
+
+
+http://www.eenadu.net/
+
+ex:-2
+protocal: http
+websitename: www.eenadu.net
+port: 80
+contextroot: /
+
+
+port : numerical number and assigned to a service in your machine.
+to access that service you have to use port number.
+
+
+india
+www.eenadu.net------------>DNS(www.eenadu.net | 100x.xx)
+------->chennai---->singaport---xxx...xx..
+
+
+
+eenadu.net (US)--dc--Physical sserver(ethernet port---80 service)--lan cables----
+100.xxx.x.x.x
+
+
+www.eenadu.net------>hosts(local dns)----->
+
+every machine 127.0.0.1 ---loop backup ip --lo
+
+
+
+
+
+
+
+
+
+=============================================
+Day-4:
+----------------------------------------------
+Block the websites
+
+Review of yesterday and previous day
+AWS account login
+basics of software installation(.exe,.bat,rpm,yum,apt-get)
+Basics of windows, login and admin login
+Normal user and system admin
+
+
+Block the website: C:\Windows\System32\drivers\etc\hosts
+/etc/hosts -Unix environment
+
+
+www.eenadu.net------hosts-----ISP---DNS(tld)---peerDNS----destination server
+
+protocal: http
+port:80
+websitename : www.eeandu.net---127.0.0.1
+
+open the notepad in administrator mode-->file-->open-->C:\Windows\System32\drivers\etc\hosts
+
+Connection refused: you have ip address and you are reaching to server and your port not listening.
+			   the service on the port number stopped.
+
+DNS_PROBE_xxx: wrong dns name or dns entry not found(check with nslookup)
+
+
+Windows: how do you install the software ?
+browser--->internet--->Repository--software/package/artifacts(store all the packages)------>download into your local-->
+
+repository/artifactory--software packages storing location.
+
+.exe (executable)--windows-GUI-Graphical user interface/CLI(command line interface)
+.bat(batch)
+.dll
+.bin
+.msi (microsoft installer)
+c:\ProgramFiles
+
+wizard installation(accept--next --next).
+
+
+Unix ---CLI
+.rpm ( redhat package manager)
+.tar
+.zip
+.tar.gz
+.tgz
+and with yum ( yellowdog update manager) , apt-get
+/usr/
+
+laptop ---bios---os----kernel---Desktop----C
+
+Windows--Drives--Format C:\
+
+command prompt----C:\Users\<username>
+
+C:\Users\<username>\Desktop
+
+user home directory: C:\Users\<username>
+user profile directories and files
+Desktop
+Downloads
+Pictures
+Videos
+Documents
+
+
+
+mutli user os
+multe user accounts
+
+c:\Users\a(Desktop,Downloads..etc)
+c:\Users\b(Desktop,Downloads..etc)
+c:\Users\c(Desktop,Downloads..etc)
+
+
+lab: create one user in your laptops with devops name and put a password for that user.
+login with that user into system and see desktop and compare with the previouosly used user.
+
+
+
+
+cd - change directory
+cd .. ( come back one directory back)
+cls (clear screen) -- clear or ctrl+l(unix)
+
+any os during installation user will be created(administrator/Power user/root user)
+
+Administrator can create multiple users(normal users).
+port numbers: 1-1024 port admin users
+1025 to 35k -- normal users.
+
+
+
+=========================
+what is the need of cloud ?
+what is the need of devops ?
+basics of networking ?
+ping--icmp -4- 
+nslookup/host
+dig
+traceroute/tracepath (unix)
+tracert (windows)
+
+
+=========================
+SDLC
+ETA
+Waterfall-legacy
+drafting---analsis---prototype---poc(demo project)(dev+testing(qa)+build infra+deploy)-----end users
+
+Agile/Kanban
+devops---delivering the product fast approach and getting feedback also fast apporach.
+every day meeting --scrum call/stand up call
+sprints---20 days ---deployment in prod(end users access)sprint meeting---jira tickets--dev/testing/devops---stroy points(days)
+environments
+dev
+qal
+perf
+------------all goes well in lower environments -- tester/qa creates a CR(change request) for deployment ,,SNOW/BMC remedy.
+
+prod--bug(dev issue or infra)-----jira ticket
+
+
+jira--ticket--queued --progress--completed---review--closed.--blocked
+
+jira(dev+test+devops)
+Servicenow(SNOW)--prod
+jenkins(CI)--dev+devops+tester+load test
+CD--chef+ansible+spinnaker+argoCD
+testing/load test/code analysis---SonarCube/TestNG/Cobertura/Jmeter(load)
+
+
+
+devops --
+
+test driven devoplopment approach
+
+
+dev team (local laptop)--coding-----source code management systems---github/svn/cvs--(raw/source code)
+---->compile/execute/pack(build)---ant,maven,msi builders and graddle----
+	code quality test cases
+	junit test cases(intergration test cases)---developers
+---->deployment(dev)--smoke test/sanity testing
+---->testing(qa--functinal testing)--green
+---->go for deployment --qal
+----> testing(qa--functional)---green
+--->deployment in perf---
+---->load testing (performance testing team--jmeter/load runner)
+
+QA team Create a CR and assing to devops team.
+CR contains.
+schedule start date/time ,duration, apporvals and plan of execution(documents/release docs). 
+
+program(source code)---compile---execute
+
+code---scm--build--deploy--test(lower)--release--prod-
+
+s3
+ec2
+ebs
+
+
+admin team:
+Browser------>AWS console----Infrastrcture----DC--Region---AZ
+aws cli--------------->infra---DC---Region---AZ
+
+
+dev team
+java/.net/python..etc------>infra--DC--Region---AZ
+
+
+Day-5:
+======
+aws account--ec2 launch
+
+Day-6:
+======
+devops intro
+Day-7:
+========
+launch windows and linux
+
+laptop(mstsc/rdp)------>aws--region--zone--securty group(3389)--windows ec2/instance/vm/server
+laptop--ssh clients(putty)-------------->unix(redhat)
+protocal: ssh
+port:22
+
+
+user=redhat--ec2-user
+     ubuntu-- ubuntu
+pem file
+
+
+Adminitrator and password(pem)/private key
+
+lab:launch linux
+step-1: create sg- allow inbound 22-ssh - anywhere
+step-2: launch ec2 machine
+
+userdata: during ec2 launch time if you want to install any services , provide those info userdata.
+windows--
+username
+password
+-------------->Desktop
+
+C:\Users\<username>\Desktop,Downloads,Pictures,Videos,Documents..etc
+
+linux:
+username:ec2-user
+password/pem
+/home/ec2-user/
+
+/home=C:\Users
+
+/home/ --normal users home directory
+/root -- root user home directory
+/ =Mycomouter/This PC
+dir=ls
+
+
+
+putty---puttygen and putty
+puttygen--generate public and private key and to convert pem into ppk
+putty - to connect unix envionments
+
+C:\
+
+[ec2-user@ip-172-31-28-125 ~]$
+
+[username@servername ~]$
+$=normal user prompt
+~=home directory
+/home/<username>
+/home
+commands:
+1. uname
+2. hostname
+3. pwd
+4. date
+5. whoami
+6. history
+7. cd .. ( back one directory)
+8. cd  ( takes to home directory)
+9. ls -l ( long  list and sort based on names)
+d=directory
+- = file
+10.chmod
+11.chown 
+12. touch
+13. w or who(pending on multi user)
+14.uptime
+
+
+filetype permissions ownership size date of creation/update  filename/dirname
+
+r=read=4
+w=write=2
+x=execute=1
+7=rwx
+
+--- --- --- =9
+owner
+group
+others
+
+rw-r--r--
+644
+
+
+755
+rwxr-xr-x
+
+chmod 777 filename
+chmod -R 777 directory
+r=recursively
+
+
+
+
+ssh -i <pemfile> username@ip/dnsname
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
