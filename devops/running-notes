@@ -754,6 +754,442 @@ Route--53---hosted zone---record set---www.awsmiddleware.in------------s3 endpoi
 http://awsmiddleware-admin.s3-website-us-east-1.amazonaws.com/s3.wrf
 http://awsmiddleware-admin.s3-website-us-east-1.amazonaws.com/web.exe
 
+AWS Deployment models
+blue/green deployment
+blue=live=1.0----green
+green=latest=2.0---live--blue
+
+devops deployment models
+b/g
+canary
+ec2 --security group--firewall
+0.0.0.0
+LAB:
+create two ec2 machines
+make one as bastion
+another one as application
+
+create two security groups
+name: bastion-sg and application-sg
+bastion-sg
+ssh-22-0.0.0.0
+application-sg
+ssh--22--bastion-sg
+
+first connect to the bastion
+ssh -i devops.pem ec2-user@18.206.154.64
+
+ssh clients: putty , gitbash and mobxterm
+to copy from local to remote server
+filezilla--gui
+winscp--gui
+scp
+
+
+scp -i devops.pem devops.pem  ec2-user@18.206.154.64:/home/ec2-user/
+
+remote port open or not 
+
+
+
+s3 is simple storage service==google drive==object storage
+its unlimited
+
+buckets--->5TB
+standard----default--immidiately
+infreequent--minuites
+glacier--archive data----hours time
+
+s3 life cycle management
+
+
+telnet ip/name port
+nc (netcat)
+nc -v ip port
+connection failed to application ec2 machine
+success for bastion ec2 machine
+ping
+connection timeout(ssh -22)
+Cloudtrail
+
+0.0.0.0--sg---notification--cloudtrail-------------lamda functions-----email--us---redsignal
+
+==================
+Day-8--Week-2
+=================
+bastion- done-security group -- 0.0.0.0/0 ---22--ssh---pem: bastion
+web: security group --- 22--ssh -- bastion-sg
+vpn--
+lab: assign a elastic ip to ec2 machine and deassociate.
+
+
+
+[ec2-user@ip-172-31-90-96 ~]$ whoami
+ec2-user
+[ec2-user@ip-172-31-90-96 ~]$
+
+
+[user@hostname]$
+[root@hostname]#
+
+
+gangi
+
+typing commands---shell(bash/ksh/csh/zsh)----kernel---hardware
+kernel==high level language to low level 
+english to machine level understand language.
+
+bash = shell and checks your commands synatax and semantic.
+lab:-
+Changing the hostname of ec2 machine.
+/etc/hostname
+/etc/hosts
+
+
+users: Administrator(root) and normal user(ec2-user)
+
+/home/<username>
+/home/ec2-user
+
+
+Normal uuser------->root
+su - root
+su 
+su -
+---------------------------->need password of root user.
+su - otheruser
+
+--------->other user password
+============================================
+ec2-user-------------->sudoers
+
+vi /etc/hostname -----------
+modes: readonly(escape) /insert /execution 
+
+after entering into insert mode --enter your cotnent---to save
+esc + shift + ; ---wq!
+w=write/save
+q=quit
+!=forceful come out of vi
+
+/etc/hosts
+
+privateip bastion
+
+hostname -F /etc/hostname
+
+
+bastion--
+webserver
+Loginto the webserver
+yum install httpd -y -----------instal httpd/apache webserver--80--
+systemctl start httpd -----------start httpd/apache
+
+
+bastion-webserver
+[root@webserver ec2-user]#
+[root@webserver ec2-user]# systemctl start httpd
+[root@webserver ec2-user]# ps -ef | grep httpd
+
+protocal://ip:port/
+
+
+http://54.89.102.180/------------------web-sg--(80)-----ec2---80---apache
+
+
+
+
+tell your webserver ip--
+
+what is ssh and telent ?
+diff
+
+==============
+Day-9--Week-2
+==============
+lab:-
+bastion-webserver(apache/httpd)
+changing the hostname
+assigning EIP
+
+
+to play the videos of our recording--install the web.exe( upload in sometime to webserver).
+
+
+IAM basics
+Need of IAM
+-->creating the users in IAM
+-->Roles 
+-->Assigning the roles to aws services--ec2
+-->basics of linux
+
+
+next?
+
+Select the security group as myip--tell me the ip address ?
+
+
+Cloudtrail=all the aws console clicks and activities will be saved into cloudtrail(auditing).
+
+
+Poweruser--Root user of AWS console--has access to all the services.
+--->all the people not use all services.
+
+
+users will be used by us.
+
+roles will be used by aws services.
+
+https://644308608816.signin.aws.amazon.com/console
+
+
+AWS console--username and password---MFA.
+----->policy--json format.
+         set of instructions(permissions) and actions.
+default policy(aws gave default) and custom policy(we need to create--policy generator).
+
+lab:create devmember1 and assign ec2read only .
+login with that user.
+
+create the group -- testing and assign cloudwatchfull access policy.
+
+ARN: amazon resource name.
+
+authentication: username and password
+authorization : level of policy/role.
+
+create user: devops-admin
+provvide : administrator
+
+
+create role called: ec2-member and give s3 access, assign the role to ec2 machine.
+
+what is the IAM user and power user and role ?
+
+types of access to users ?
+
+next ? how to create cross account IAM role ?
+
+
+ec2---linux , windows
+
+==============
+Day-10--Week-2
+==============
+lab:-
+launch ec2--windows as bastion
+launche--ec2--linux--webserver
+
+
+------>bastion--->3389--0.0.0.0/0----bastion-sg
+------>webserver-->22---bastion-sg 
+bastion---gitbash or putty----
+
+
+s3----simple storage service
+-->bucket (objects--files or directories)
+-->bucket level policy
+-->s3 cross region
+-->bucket level security and encryption
+-->Versioning
+-->command line access to s3 service
+-->s3 as a static website hosting
+-->Cloudfront (CDN)
+
+s3 bucket can be public or private.
+s3 is a regional service and can be accessed from anywhere.
+
+
+IAM role--->ec2-member---->full s3------>ec2 machine
+
+s3 --storage types in s3.
+standard
+infreequent
+glacier
+
+white listing ?
+Apache--http server/web server--80-----------ec2---OS
+static content 
+
+s3
+
+how do enable the bucket level policy ?
+how do you enable lifecycle, versioning, cross region and other account access ?
+make bucket as a static hosting ?
+what is s3 ?
+
+lab: Hosting a Static Website on Amazon S3
+
+https://www.free-css.com/free-css-templates/page233/innova
+
+
+Route--53---hosted zone---record set---www.awsmiddleware.in------------s3 endpoint
+
+
+
+http://awsmiddleware-admin.s3-website-us-east-1.amazonaws.com/s3.wrf
+http://awsmiddleware-admin.s3-website-us-east-1.amazonaws.com/web.msi
+
+
+lab:--github--devops--url-lab:
+http://awsmiddleware-admin.s3-website-us-east-1.amazonaws.com
+http://webserverpublicip
+
+
+linux-bastion--webserver
+windows-bastion-webserver
+
+
+==============
+Day-11--Week-2
+==============
+linux bastion -- webserver(linux),webservers
+windows bastion -- webserver(linux)
+load balancer lab
+
+AWS- Cloudfornt(s3 and load balancers) -- CDN ( akamai)---
+-->Edge
+-->Cache
+-->TTL
+
+static content purpose
+
+lab:
+security groups
+bastion-sg
+22--0.0.0.0/0
+web-sg
+22--bastion-sg
+80--alb-sg
+loadbalancer-sg
+80- 0.0.0.0/0
+sg-07e169d8060612bf6
+
+sg-0c417efc67f391f70
+
+root user:
+
+cd /var/www/html/
+echo "this is server2" >>index.html
+
+l
+
+==============
+Day-12--Week-3
+==============
+
+what is httpd ?
+what is http port number ? https port number ?
+what is yum ? how to install apache ? stop/start and check apache ?
+cloudfront for what purpose ?
+for auditing purpose ?
+what is damemon ?background process
+how to check service running or not ? ps -ef | grep -i "servicename"
+
+linux users/aws cli/
+
+
+cloudtrail
+cloudwatch
+ec2
+s3
+IAM
+Cloudfront
+ebs--block storage
+AMI
+
+lab:
+create a AMI from Console
+packer -- ami builder----
+ec2---apache---enable os level service(systemctl enable httpd)-----apache-image
+
+ec2----apache-image----
+
+
+redhat 7 --systemctl
+redhat 6  --service
+
+webserver--static content
+
+apache
+nginx
+
+how do install the webserver and how to stop and start ?
+how do you check running or not ?
+what is user data ?
+
+/var/lib/cloud/instances/[instance-id]/user-data.txt
+
+AMIs can be shared to other aws account. 
+Select the ami and -->modify image permissions and prvide aws account number.
+
+
+ami can be shared accross all the accounts
+custom ami
+user data
+
+i need first base ami
+
+#!/bin/bash
+yum update -y
+yum install httpd -y
+systemctl start httpd 
+systemctl enable httpd
+#download website
+wget http://download website
+cd /var/www/html/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
