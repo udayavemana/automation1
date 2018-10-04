@@ -1279,6 +1279,52 @@ vpc peering
 
 can you tell me your environment and how did you made automation on it ?
 
+================
+Day-15-Week-3
+================
+aws cli , and vpc
+what is it ? cli tool to interact with aws infra.
+why we use ? to automate manual tasks with cloudformation or with scripts.
+what are tools required ? only aws cli software
+how do you install the aws cli ?
+download the pkg and install it.
+
+
+https://s3.amazonaws.com/aws-cli/AWSCLI64PY3.msi
+
+
+
+After running aws configure-->a.k and s.k, region name
+it creates in your user home directory .aws/credentials and config.
+
+https://aws.amazon.com/cloudformation/
+
+Resource==service
+stack/template=Group of resources creating from CFN.
+
+Cloudformation:-
+
+AWSTemplateFormatVersion" : "2010-09-09",
+Description: 
+Parameters:
+name: 
+type:
+
+Mappings:
+Resources:
+
+Cloudformation
+Terraform
+
+
+aws cloudformation create-stack --stack-name myteststack --template-body file://sampletemplate.json --parameters ParameterKey=KeyPairName,ParameterValue=TestKey ParameterKey=SubnetIDs,ParameterValue=SubnetID1\\,SubnetID2
+
+
+
+
+
+
+
 
 https://s3.amazonaws.com/awsmiddleware-admin/Day_14_vpc.wrf
 
