@@ -1149,6 +1149,138 @@ https://s3.amazonaws.com/awsmiddleware-admin/users.wrf
 
 
 
+==============
+Day-13-Week-3
+==============
+ssh --BruteForce attack--Guard and Config---ip address
+compromise--
+compliance requirement---security alert--jira ticket/email
+
+ssh -i pem ec2-user@public
+
+/var/log/secure
+/var/log/messages
+
+/var/log/httpd/access.log , error.log
+
+
+100---------------splunk/elk
+
+http/https
+sql injection/DoDs-Denial of service
+
+WAF
+
+chkconfig 3 5 httpd (or) systemctl enable httpd 
+Runlevels
+=======
+7
+init 0----shutdown
+init 1 --single user mode--no network(safe mode)
+init 2 --multi user mode -- no network
+init 3 --multi user mode + network
+init 4 --mulit user mode + network 
+init 5 -- multi user mode + network + GUI
+init 6 --reboot
+
+
+ulimit -Sa --warning
+ulimit -Ha --goes down
+
+
+network
+
+
+os--multi user login
+
+multi tasking(multi threaded)
+
+multi user---accounts
+multi user login --rdp licenses---license----Windows
+ssh --free
+
+i am unable to ssh ? how do you troubleshoot ?
+security group allow or not --22
+remote service(sshd ) may be down--reboot
+user issues(user name/password expire/account lock)
+password--chage -l username
+account--pam_tally2 
+ulimit reaches to max, (lsof)----resource not available
+
+redhat 7 -- systemd ---first process--process number will be zero
+redhat 6 -- init ----first process-- process number will be zero
+
+ps -ef | grep -i init
+
+sshd
+ntpd 
+crond -- scheduling
+smtpd---mail
+logrotate.d
+atd --scheduling
+httpd
+mysqld
+postgresqld
+mongod
+
+Windows Server 2003,2008,2010, 2016
+==============
+Day-14-Week-3
+==============
+linux basics,subnet,ip address, cidr,vpc(components).
+CIDR=Range of ip addresses in cloud. 
+subnet= range of ip address in cidr,its part of cidr.
+10.0.0.0/16=65k  or /24 /32
+cidr.xyz
+total ip address
+first address
+end ip address
+subnet mask
+
+As per aws recomendation if any component getting created in one az , it has to be created in all az's in 
+same region for high availiability.
+
+how do you make sure your services high available in aws ?
+create az services in all azs in aws.
+
+cross zone s3 replication.
+
+DR
+
+VPC
+cidr
+subnets
+igw
+natgw--elastic ip
+
+how do you access the internet in private subnet ? 
+
+how do you upgrade patches/packages in private subnet ?
+IGW=to get internet access from pubic subnet , we need this component in vpc
+NATGW= to get internet access from private subnet , we need this component in vpc.
+routes= to attach igw with public subnet and nat-gw with private subnet.
+
+internet---igw----route---public subnet
+intranet---nat-gw--route---private subnet
+
+steps
+create vpc and assign cidr range.
+create subnets in vpc and assign each subnet with sub section of cidr range of vpc.
+create igw and attach to vpc.
+create nat-gw.
+create routes for internetgateway and associate with public subnet.
+create route for nat-gw and associate with private subnet.
+-->Cross checl all once 
+launch ec2 machine and select your own vpc and your own subnet in ec2 dashboard section.
+
+
+
+vpc peering 
+
+can you tell me your environment and how did you made automation on it ?
+
+
+
 
 
 
