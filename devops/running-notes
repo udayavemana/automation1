@@ -1404,9 +1404,8 @@ ping has to work in private subnet ec2 machine.
 Remove the route to nat gateway and you have failure
 Now solve the issue to work ping pakcets.
 
-
-
-
+https://s3.amazonaws.com/awsmiddleware-admin/vpc.wrf
+https://s3.amazonaws.com/awsmiddleware-admin/cfn.wrf
 
 
 
