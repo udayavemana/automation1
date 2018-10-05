@@ -1331,6 +1331,80 @@ https://s3.amazonaws.com/awsmiddleware-admin/Day_14_vpc.wrf
 
 
 
+================
+Day-15-Week-3
+================
+aws cli , and vpc
+what is it ? cli tool to interact with aws infra.
+why we use ? to automate manual tasks with cloudformation or with scripts.
+what are tools required ? only aws cli software
+how do you install the aws cli ?
+download the pkg and install it.
+
+
+https://s3.amazonaws.com/aws-cli/AWSCLI64PY3.msi
+
+
+
+After running aws configure-->a.k and s.k, region name
+it creates in your user home directory .aws/credentials and config.
+
+https://aws.amazon.com/cloudformation/
+
+Resource==service
+stack/template=Group of resources creating from CFN.
+
+Cloudformation:-
+
+AWSTemplateFormatVersion" : "2010-09-09",
+Description: 
+Parameters:
+name: 
+type:
+
+Mappings:
+Resources:
+
+Cloudformation
+Terraform
+
+
+aws cloudformation create-stack --stack-name myteststack --template-body file://sampletemplate.json --parameters ParameterKey=KeyPairName,ParameterValue=TestKey ParameterKey=SubnetIDs,ParameterValue=SubnetID1\\,SubnetID2
+
+================
+Day-16-Week-3
+================
+Provisioners=packages 
+Provider=AWS
+
+what is packer ?
+Terraform , diff b/w terraform and cfn ?
+80 service , ---->page cant be displayed ?
+
+redhat 6 = iptables == service iptables status/stop/start/restart
+redhat 7 = firewalld = systemctl stop/start/status/restart/ firewalld
+
+yum install firewalld -y
+
+
+https://gist.github.com/naveen-vijay/a6e63e2704383aa05ffa
+
+
+aws cloudformation create-stack --stack-name security-sg --template-body file://security_group.json --parameters ParameterKey=Name,ParameterValue=testing ParameterKey=Description,ParameterValue=test ParameterKey=VPC,ParameterValue=vpc-4f1cce35
+
+NACL=Subnet(group of ec2 machines)
+sg= only to ec2
+
+nacl will have ctrl to inbound and outbound flow.
+sg only inbound
+nacl will have deny rules
+
+lab: nat-gw lab
+ping has to work in private subnet ec2 machine.
+Remove the route to nat gateway and you have failure
+Now solve the issue to work ping pakcets.
+
+
 
 
 
