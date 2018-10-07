@@ -1,0 +1,249 @@
+infra= 
+computing
+storage
+network
+dns,-ns,root name , 
+nslookup
+dig
+traceroute
+host
+ifconfig
+
+.net -----IIS--Windows
+php,html,static---Apache, Nginx
+Java-- Tomcat , weblogic, websphere, jboss
+SAP Abap-- SAP Basis
+
+t
+computing-c
+memory-m
+storage-r
+
+micro
+large
+x large
+2x large
+4x large
+8x large
+9x large
+18x large
+
+
+
+vm - virtual machine
+ami - amazon machine image- pre- template os
+
+s3 storage
+
+10 ec2 machines+ data trasfer
+
+ec2 to s3 data transfer is free
+
+
+on - prem--- 10 servers--vm 
+
+
+internet to aws
+
+cost optimzation ---
+store s3 and move across all your environment.
+block = hard disc-- os
+object storage=s3= google drive
+
+Intial account we create= root /admin account
+
+IAM account
+Root 
+Administrator
+
+
+Identity and Access management
+
+
+devlopment1
+
+console/pgmatic
+
+policy = permission
+
+user= download csv
+IAM
+console user
+cli user/pgm user
+
+
+9 months-- pgmatically--java
+
+aws defined policoes
+IAM
+
+
+90 days rotate
+
+
+aws--a.k and s.k
+
+
+
+deploying--code--a/k and s.k
+
+
+new code-- 
+MFA--
+Hardware(RSA devicehttps://ap-southeast-1.console.aws.amazon.com/console/signup?region=ap-southeast-1)
+software(Google authenticator,)
+
+us-west-2
+us -east 1
+Global- IAM , Route53
+Regional- 
+AZ
+service/resource
+Dev= ec2
+AWS/Azure= orginization = resource group
+
+Request limit increase
+
+region
+t2,m
+
+m4
+m5--less
+
+
+
+
+
+
+
+IAM free
+storage
+servers
+
+
+
+
+
+
+
+login--username and password
+
+OTP 
+
+
+
+
+
+
+
+
+
+
+
+
+
+50
+20
+
+cross iam account role
+
+$ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+
+aws configure
+
+--->access key and secret will store
+
+C:\Users\<username>\.aws
+credentials
+config
+
+Cloudformation(AWS)---Terraform(All cloud)- IAC
+
+Public IP= normal public ip and eip.
+
+Private 
+10
+192
+172
+
+snapshot=backup
+volume=hard disc=ebs
+EIP= Elastic IP = Static Public IP
+security group=firewall
+keypair=pem file
+
+
+Normal public ip get renew 
+private ip never change, until you terminate.
+
+
+
+Desktop
+
+C:\Users\<username>\
+Downloads
+Documents
+Pictures
+/home/username/
+
+root = #
+normal user=$
+~ = home directory
+
+/home/devops/
+
+packer= ami builder(custom ami's)=json
+cfn
+terraform
+spinnaker
+IAC
+
+ec2
+cloudwatch
+cloudtrail
+athena
+IAM
+cloud service models
+IaaS admin-RAM,CPU,OS,Down-infra
+SaaS -- end user
+PaaS -- build and deploy--stop/resize/modify-blog
+azure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
