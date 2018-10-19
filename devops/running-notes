@@ -3504,6 +3504,92 @@ https://s3.amazonaws.com/awsmiddleware-admin/ci_cd.wrf
 
 
 
+================
+Day-24-Week-5
+================
+installting tomcat 
+yum 
+war
+jar
+rpm 
+zip/tar/tgz/
+
+archiving commands
+====================
+
+zip -r filename.zip directory ---create the zip 
+unzip filename.zip -d targetdirectory ---unzip 
+less filename.zip --to see zip contenet without extract 
+unzip -l filename.zip --to see zip contenet without extract 
+
+.tar 
+
+tar -cvf filename.tar directory ---create tar 
+tar -xvf filenma.tar --extract tar 
+tar -tvf filname.tar ----to list without extract
+
+.tar.gz or .tgz
+
+tar -cvzf filename.tar directory ---create tar 
+tar -xvzf filenma.tar --extract tar 
+tar -tvzf filname.tar ----to list without extract
+
+To create .gz (dont run on live filename)---old logs or old files not being used.
+gzip filename ---->creates filename.gz
+to unzip 
+gunzip filename.gz ---->creates filename
+
+
+static code --1000pages --- .zip or .tar  or tgz or tar.gz 
+
+html---ReactJS-----ec2---apache or nginx
+
+
+upto ---1024 --ports --root or admin or sudoer 
+
+yum install httpd -y
+systemctl start httpd
+
+
+java-----j2se and j2ee and j2me
+j2ee---------->servlets,jdbc,structs,jsp,springs,hibernate,springboot,ejb ----- .war , .ear , .jar , .har , .sar 
+
+java pages---->first.java ------>compile ---->first.class ---->build(ant,maven) --->.war , .ear , .jar(pack of classes)
+
+
+Tomcat(only war ) ---no EJB----web container ------java web server--static + java  
+jboss/wildfly-------application servers---redhat ---web+ejb 
+weblogic-----applicaiton servers ---oracle --web + ejb 
+websphere-------applicaiton servers---IBM ---web + ejb 
+glassfish ----application servers ---oracle ---web + ejb 
+
+Application structure
+
+EAR=WAR + JAR(ejb)
+
+
+https://www.google.co.in/search?q=eclipse+java+project+structure&rlz=1C1CHBH_enIN814IN815&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj_tcS-v5HeAhXSbSsKHcaJClUQ_AUIDigB&biw=1337&bih=638#imgdii=q5QXc1zoSaKorM:&imgrc=3Y9UgvHX5b6cZM:
+
+
+
+war ---tomcat ----java(jdk + jre) 
+
+java instaltion 
+yum 
+rpm 
+tar.gz
+
+rpm -ivh filename.rpm ---to install 
+rpm  -e packagename -- to uninstall 
+rpm -qa pkg --- to check installed to not
+
+Tomcat instaltion 
+
+yum 
+tar.gz
+zip 
+https://s3.amazonaws.com/awsmiddleware-admin/tomcat_jenkins.wrf
+
 
 
 
