@@ -3595,9 +3595,60 @@ https://s3.amazonaws.com/awsmiddleware-admin/tomcat_jenkins.wrf
 
 
 
+=================
+Day-26th
+==================
+jenkins -setup
+with war installation.
+
+Tomcat ---
+java 
+yum 
+rpm----> 
+zip 
+
+instal the wget 
+Download --- wget----.rpm 
+rpm -ivh filename.rpm 
+
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+wget 
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
 
 
 
+Download 
+zip---unzip 
+change the permisson
+start the tomcat
+
+
+https://tomcat.apache.org/download-80.cgi
+
+install the unzip,wget 
+wget http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34-windows-x64.zip
+unzip apache-tomcat-8.5.34-windows-x64.zip
+chmod -R 755 apache-tomcat*
+
+Tomcat directory structure
+bin---stop and start 
+conf--configuration files
+logs ---
+webapps -- deployment directory 
+work and temp ---temporary directories 
+
+
+Deployment is two types : hot and cold 
+hot deployment is while running service 
+cold --stop service and deploy and start 
+
+
+/root/.jenkins/workspace/s3upload/
+/root/.jenkins/jobs/s3upload 
+
+https://s3.amazonaws.com/awsmiddleware-admin/jenkins_setup.wrf
 
 
 
