@@ -3649,109 +3649,51 @@ cold --stop service and deploy and start
 /root/.jenkins/jobs/s3upload 
 
 https://s3.amazonaws.com/awsmiddleware-admin/jenkins_setup.wrf
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 what is git and github ?
 what are stages in git ?
 what is untrakced area in git ?
 tell me linux folder structure ?
-
-
-
-
 dev----scm---ec2(aws cli)---s3------
+===============
+Day-27th
+==================
+lab: bring tomcat as a os level service.
+
+
+Tomcat --deployment - webapps
+logs 
+manager
+host-manager 
+localhost 
+localhost_access.log ( similar to apache/nginx-alll webservers -- access.log)
+catalina.out log
+
+conf/server.xml 
+
+head (head filename , head -100 filename)
+tail (tail filaname , tail -f filename , tail -100f filename, tail -100 filename)
+
+users /user id/login users/login id
+two types
+local users
+ldap /ad users ------------>
+lab: jenkins with ldap integration and assign the users to do some jobs.
 
 
 
+#!/bin/bash
+cd /root/.jenkins/workspace/prod-s3-upload
+aws s3 cp index.html s3://www.awsmiddleware.in/
+
+#!/bin/bash
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 
+lab: jenkins integration with seleneium
 
-
-
+https://s3.amazonaws.com/awsmiddleware-admin/jenkins_2.wrf
 
 
 
