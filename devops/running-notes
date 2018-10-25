@@ -3698,8 +3698,59 @@ https://s3.amazonaws.com/awsmiddleware-admin/jenkins_2.wrf
 
 
 
+================
+Day-28th
+==================
+linux review
+jenkins - topic
+ant , maven 
 
 
+
+
+
+
+
+what is executor in jenkins ?
+what are the plugins u used in jenkins ?
+
+https://www.slideshare.net/AWSUsersGroupBengalu
+
+REDBUS
+---------->DEV , qal , e2e , perf , prod
+
+ubuntu 
+
+#!/bin/bash
+apt-get update 
+apt-get install apache2
+systemctl start apache2
+systemctl enable apache2
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/gangireddydanam/apachelabs.git
+git push -u origin master
+
+how do you setup master and slave in jenkins ?
+how do you enable full ci and cd with jenkins ?
+
+plugin : github integration and blue ocean 
+
+
+executor : parallel number of jobs
+label : group of slaves or slave 
+
+matrix
+master and slave
+enable the plugins
+
+#!/bin/bash
+cd /root/.jenkins/workspace/
+aws s3 cp index.html s3://qal-aws.awsmiddleware.in/
+
+https://s3.amazonaws.com/awsmiddleware-admin/jenkins_3.wrf
 
 
 
