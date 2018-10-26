@@ -3758,9 +3758,110 @@ https://s3.amazonaws.com/awsmiddleware-admin/jenkins_3.wrf
 
 
 
+================
+Day-29th
+==================
+Runtime environment = your code running location 
+shell scripting doesnt have module support and its stateless.
+base packages :
+base agents: monitoring agent (appd,new relic,nagios) and log agent ( elk, splunk),ldap agents. 
+
+Tomcat instaation script
+
+#!/bin/bash 
+yum install unzip wget git -y
+#java Downloading 
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+#installtion of java
+rpm -ivh jdk-8u131-linux-x64.rpm
+#Download tomcat 
+mkdir /opt/devops
+cd /opt/devops
+wget http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34-windows-x64.zip
+unzip apache-tomcat-8.5.34-windows-x64.zip
+chmod -R 755 apache-tomcat*
+mv apache-tomcat* tomcat
+/opt/devops/tomcat/bin/startup.sh
+
+
+Apache web server / httpd server /http server 
+
+#!/bin/bash 
+yum update -y
+yum install unzip wget git -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+
+
+Nginx
+
+#!/bin/bash 
+yum update -y
+yum install unzip wget git -y
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-7*.rpm
+yum update -y
+yum install nginx -y
+systemctl start nginx
+systemctl enable nginx
 
 
 
+
+
+
+
+
+
+
+#!/bin/bash 
+yum install unzip wget git -y
+#java Downloading 
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+#installtion of java
+rpm -ivh jdk-8u131-linux-x64.rpm
+#Download tomcat 
+mkdir /opt/devops
+cd /opt/devops
+wget http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34-windows-x64.zip
+unzip apache-tomcat-8.5.34-windows-x64.zip
+chmod -R 755 apache-tomcat*
+mv /opt/devops/apache-tomcat* tomcat
+/opt/devops/tomcat/bin/startup.sh
+
+
+
+/root/.jenkins/jobs/dev-apache-build/*--config.xml 
+/root/.jenkins/workspace/dev-aapche-build/
+
+
+/usr/local/bin/aws s3 cp s3://artifacts-labs-apps/dev-apache-$version.zip .
+scp -i <pemfile> dev-apache-$version.zip ubuntu@ip:/tmp/
+ssh -i <pemfile> ubuntu@ip
+systemctl stop apache2
+cd /tmp/
+unzip dev-apache-$version.zip 
+cd dev-apache-$version
+cp -r * /var/www/html/
+systemctl start apache2
+
+
+Build---java ---.war /jar/ear
+
+ant --build tool
+build.xml
+targets
+
+ant targetname
+
+ant init 
+
+ant compile
+ant init
+
+https://s3.amazonaws.com/awsmiddleware-admin/jenkins_ant_maven_tomcat.wrf
 
 
 
