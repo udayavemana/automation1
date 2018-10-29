@@ -3867,6 +3867,70 @@ https://s3.amazonaws.com/awsmiddleware-admin/jenkins_ant_maven_tomcat.wrf
 
 
 
+$ git push
+To C:/Users/Madhuchinna/gitlabs/test.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'C:/Users/Madhuchinna/gitlabs/test.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Madhuchinna@DESKTOP-4U95NE4 MINGW64 ~/gitlabs/workspace2 (master|MERGING)
+$ git log
+
+
+
+Madhuchinna@DESKTOP-4U95NE4 MINGW64 ~/gitlabs/workspace2 (master|MERGING)
+$ git merge origin origin/master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Madhuchinna@DESKTOP-4U95NE4 MINGW64 ~/gitlabs/workspace2 (master|MERGING)
+$
+
+
+
+
+Branching strategy
+development,release --1
+tag based strategy--2
+
+scm ----devlopment ----------webhooks-----jenkins ---build job --snapshot-pack ----artifactory ---deploy/dev----dev
+qal 
+
+devlopment branch code we will deploy in lower environments(dev/qal/e2e/perf)
+
+at the one week before sprint release ---devlopoment branch code and merge into master/release branch
+
+scm ----release/master -------webhooks-----jenkins ---build job --relase-pack ----artifactory ---deploy/e2e----e2e
+
+
+release -pack ----- prod 
+
+snapshot-pack---lower environment 
+relase 
+
+git init 
+git init --bare
+git status
+git log
+git show
+git commit
+git config
+git conig --list
+git push 
+git pull
+git merge 
+git clone
+git --cherry-pick
+git stash 
+
+brnaching strategy
+
+https://s3.amazonaws.com/awsmiddleware-admin/scm.wrf
 
 
 
