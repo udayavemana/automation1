@@ -3938,9 +3938,78 @@ https://s3.amazonaws.com/awsmiddleware-admin/scm.wrf
 
 
 
+================
+Day-31th
+==================
+EBS--aws 
+git
+maven life cycles - pom.xml
+
+creating the repo
+creating workspace (clone)
+created branch
+merge conflicts 
+stashing
+
+HEAD: points to latest commit id .
+
+when you doing push , it says failed , how do you solve it ?
+failed to push some ref
+
+pull the remote changes to local worksapce/working area and if asks make it with merge with commit message and push it again.
+
+git pull origin master --allow-unrelated-histories
+
+.gitignore
+*.txt 
+
+create the ignore files to untrack in the github
+
+developer does a code whole day and he has not commited , how can he save whole work and he has to start same work on tommorow
+?
+
+take the bakcup of current workspace.
+git stash
+git stash clear
+git stash apply
+
+how do resolve branch conflicts when you merging branches ?
+CONFLICT (content): Merge conflict in index.html
+
+git merge source destination
+
+check the conflicts files and clear the conflicts( update required lines of code in the files)
+and after updating the file . add into staging aread and commit.
+
+git pull=git fetch + git merge 
+
+stashing
+branches
+bare repo
+push conflicts
+branch conflicts
 
 
+EBS volumes
+block -- hard disc
 
+infra --computing , storage , network 
+Root device=C drive--/dev/sda
+
+how to create the file system ?
+add a disc into the linux machine---create a volume and attach it.
+format (ext3,ext4 , xfs)--mkfs.ext4 /dev/xvdf 
+update the /etc/fstab file
+/dev/xvdf                                 /opt/newfs              ext4    default         0 0
+mount 
+
+
+tomorrow: what is sector in disk and track and header in disc 
+what is RAID levels in hard disc and why we use ?
+what is nfs and how do create ?
+maven life cycle 
+
+https://s3.amazonaws.com/awsmiddleware-admin/scm_1.wrf
 
 
 
