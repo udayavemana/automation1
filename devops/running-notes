@@ -4012,7 +4012,58 @@ maven life cycle
 https://s3.amazonaws.com/awsmiddleware-admin/scm_1.wrf
 
 
+================
+Day-32th
+==================
+gangireddydanam@gmail.com
 
+https://aws.amazon.com/events/awsome-day/awsome-day-online/#agenda
+
+maven 
+build project
+store the artifacts into s3 
+we will deploy in remote tomcat
+master and slave 
+pipeline
+sns/sqs/ses --one email
+ram monitoring
+
+
+code ---test cases ---your code ----github----build --maven test 
+
+
+tomorrow:
+SNS servicce
+cross iam role ?
+what is pipeline 
+
+
+
+/dev/sda1
+
+
+vol-01af9688a2d1f7df8
+
+
+
+
+
+
+pom.xml
+
+
+lab: find the andrioid project , ant projects, maven projects in github --5 projects each and build those with jenkins
+prepare a document step by step and share.
+
+maven imp : pom.xml and lifecycles
+goals and dependencies and plugin information
+
+
+
+sending an alert when cpu reaches or system goes down ..like all kind off issues from cloudwatch with sns.
+simple notification service
+
+https://s3.amazonaws.com/awsmiddleware-admin/mvn.wrf
 
 
 
