@@ -4070,7 +4070,58 @@ https://s3.amazonaws.com/awsmiddleware-admin/mvn.wrf
 
 
 
+33-class 
+================
 
+mvn builds
+nexus 
+pipeline
+docker 
+
+lab: from jenkins send email
+lab: 
+add users in jenkins and give them read only access to jobs
+devuser--readonly
+testuser--readonly
+adminuser--build and execute 
+
+
+
+
+nexus is storage location for artifacts/builds/targets/binaries/software/delivery .
+free and commercial version.
+
+lab: 
+jenkins -----mvn project --build---war ---nexus
+deploy-name--dev --deploy tomcat 
+
+
+
+how do you setup password less setup ?
+run the ssh-key
+
+
+apache-tomcat-8.5.34
+
+pipeline --job
+
+build
+test 
+pacakge
+deploy
+test cases 
+
+pipeline --sequence of jobs/sequence of stages 
+Jenkinsfile--github--groovy language/dsl 
+pipeline --  
+
+
+create a pipeline job --Jenkisnfile 
+
+jenkins has two views --1 classisc 
+2 blue ocean view ---pipeline -- 
+
+https://s3.amazonaws.com/awsmiddleware-admin/mvn_nexus.wrf
 
 
 
