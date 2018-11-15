@@ -4575,12 +4575,92 @@ sql developer tools(client)--mysql workbench--3306-------------rds(mysql)-------
 
 
 
+lab:-
+
+one database name called : pre-prod
+another name : prod
 
 
+pre-prod
+ec2---tomcat---petclinic.war------pre-prod-mysql(rds)
+
+prod
+ec2---tomcat---petclinic.war------prod-mysql(rds)
+
+export data from prod and import into pre-prod.
+
+mysql commands--10 commands
+
+to connect mysql command
+mysql -h <db endpoint> -u <username> -p -dbname 
+
+To know db name
+show datbases;
+
+To switch to db
+use dbname;
+
+To see tables
+
+show tables;
+
+Creating the database
+
+create database dbname;
+
+create the user 
+
+Grant priviliges(select,update,delete,modifiction)
 
 
+lab: lamp ---with drupal,wordpress 
 
 
+CREATE DATABASE books;
+use books;
+CREATE TABLE authors (id INT, name VARCHAR(20), email VARCHAR(20));
+
+
+INSERT INTO authors (id,name,email) VALUES(2,"Priya","p@gmail.com");
+INSERT INTO authors (id,name,email) VALUES(3,"Tom","tom@yahoo.com");
+
+
+show databases;
+create database dummy;
+use dummy;
+show tables;
+CREATE DATABASE books;
+describe authors;
+use books;
+CREATE TABLE authors (id INT, name VARCHAR(20), email VARCHAR(20));
+INSERT INTO authors (id,name,email) VALUES(2,"Priya","p@gmail.com");
+INSERT INTO authors (id,name,email) VALUES(3,"Tom","tom@yahoo.com");
+
+select * from authors; 
+select id,name,email from authors where id=2;
+
+
+lab: jenkins job for db refresh (take the database dump in prod , copy the dump to pre-prod and import)
+
+lab: end to end with r53 to db (lamp,tomcat,s3,lamda)
+
+
+tomorrow lab: 
+sticky bit, how do you create it ?
+inode
+symlink
+how to create the file system ?
+vpc peering 
+
+lab: ec2---apache--php--(wordpress/drupal)-------------rds(db)
+
+https://s3.amazonaws.com/awsmiddleware-admin/rds.wrf
+https://s3.amazonaws.com/awsmiddleware-admin/rds-2.wrf
+
+https://s3.amazonaws.com/awsmiddleware-admin/petclinic.war
+
+
+https://s3.amazonaws.com/awsmiddleware-admin/petclinic_lab.txt
 
 
 
