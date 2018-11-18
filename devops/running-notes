@@ -4673,6 +4673,165 @@ https://s3.amazonaws.com/awsmiddleware-admin/petclinic_lab.txt
 
 
 
+lab: end to end with r53 to db (lamp,tomcat,s3,lamda)
+
+
+tomorrow lab: 
+sticky bit, how do you create it ?
+inode
+symlink
+how to create the file system ?
+vpc peering 
+
+lab: ec2---apache--php--(wordpress/drupal)-------------rds(db)
+
+
+Ansbile---IAC/CM 
+push model
+no agents
+password less setup
+/etc/ansible/--hosts , ansible.cfg 
+playbook--ansible-playbokk
+modules --ansible 
+roles--ansbile-galaxy
+list 
+jinja a=10 {{a}} 
+hosts --inventory (servers list)--static and dynamic inventory
+
+
+ansible -m name=httpd state=present 
+
+
+
+ping servername/ip 
+
+
+serverlist
+s1
+s2
+s3
+s4
+s5
+
+shell script ( spoon model) 
+#!/bin/bash
+for i in in 'cat serverslist'
+do
+nslookup  $i 
+done 
+
+/etc/ansible/hosts 
+s1
+s2
+s3
+s4
+s5
+
+ansible -m ping all (parallel/fork)
+
+Installation 
+-->EPEL
+
+Main configuration 
+/etc/ansible/ansible.cfg 
+/etc/ansible/hosts 
+
+
+redhat 7--
+bootup---power ---on ---process---systemd
+
+redhat6--
+
+init
+
+$ ssh -i tower.pem centos@18.206.225.3
+Last login: Wed Oct 31 16:37:15 2018 from nat-pool-rdu-t.redhat.com
+
+  Welcome to Ansible Tower!
+
+  Log into the web interface here:
+
+    https://10.42.0.42/
+
+    Username: admin
+    Password: je7jE3gugqLM
+
+  The documentation for Ansible Tower is available here:
+
+    http://www.ansible.com/tower/
+
+  For help, visit  http://support.ansible.com/
+[centos@ip-172-31-94-244 ~]$
+
+#!/bin/bash
+#changes the hostname 
+echo slave1 >/etc/hostname 
+ip=`hostname -i`
+echo "$ip slave1" >>/etc/hosts
+hostname -F /etc/hostname 
+
+#allow login other than ec2-user
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+service sshd restart 
+#setting the password for the root user 
+echo 12345 | passwd root --stdin
+
+
+To replace the keyword with sed 
+
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+serviec sshd restart 
+
+ ansible all  -m yum -a "name=httpd state=present"
+ ansible all -m service -a "name=httpd state=started"
+
+
+ https://github.com/ansible/ansible-examples/tree/master/tomcat-standalone
+ 
+ 
+ 
+ installing tomcat
+ 
+how os boots in linux/windows ?
+boot up sequence of os ?
+
+create the jenkins ----create a job ----build a war ---hellow.war ---job-ansbile-deployment (playbook)
+another tomcat 
+playbook for deplyment of war file in tomcat
+
+
+playbook contains--roles---yaml--tasks 
+
+lab: create the ec2 with ansible
+create teh s3 bucket 
+create the load balancer
+
+
+
+#!/bin/bash 
+yum install unzip wget git -y
+#java Downloading 
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+#installtion of java
+rpm -ivh jdk-8u131-linux-x64.rpm
+#Download tomcat 
+mkdir /opt/devops
+cd /opt/devops
+wget http://mirrors.wuchna.com/apachemirror/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34-windows-x64.zip
+unzip apache-tomcat-8.5.34-windows-x64.zip
+chmod -R 755 apache-tomcat*
+sleep 5
+mv apache-tomcat-8.5.34 tomcat
+sleep 5 
+/opt/devops/tomcat/bin/startup.sh
+
+
+
+/opt/myapps/
+
+
+application-----apache/nginx(r.proxy)--DMZ--8009---tomcat----DB
+ajp=8009
 
 
 
