@@ -4838,9 +4838,43 @@ ajp=8009
 
 
 
+class--
+=============
+petclinic(tomcat + rds)
+pre-prod to prod---
+Autoscaling
+load --request----cpu/ram/network --goes high 
+
+desired=
+
+ami---autoscale--load /schedule 
+1am to 2am
+
+ami---launch configuration----autoscale
+
+
+Monitoirng ---logs(splunk/elk,ebk) ,infra(nagios,newrelic,appD , apm(new relic, appD,DataDog)
+
+
+lifecycle hooks
+nexus---hello-1.0.war ---hello-2.0.war 
+
+base image----user data script---tomcat + java+ download--hello-1.0.war ---- war file from nexus repo----ami------
+
+autoscaling---load balancer---healthy--
+
+terraform/cfn/spinnaker---
 
 
 
+
+
+
+
+tomcat---jenkins
+
+
+https://s3.amazonaws.com/awsmiddleware-admin/auto.wrf
 
 
 
