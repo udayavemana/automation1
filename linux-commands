@@ -1541,3 +1541,38 @@
   606  ./deploy_nginx.sh 
   607  cat deploy_nginx.sh 
   608  history 
+  
+  
+archive commands  
+tar -cvf file.tar.gz /opt/tomcat
+tar -tvf file.tar.gz
+tar -xvf file.tar.gz
+
+
+tar -cvzf file.tgz /opt/tomcat
+tar -tvzf file.tgz
+tar -xvzf file.tgz
+
+zip -r file.zip /opt/tomcat
+unzip file.zip 
+unzip -l file.zip 
+less file.zip 
+
+  wget https://updates.jenkins-ci.org/download/war/2.118/jenkins.war
+   53  ls -ltr
+   54  rm -rf ROOT/ manager/ host-manager/ examples/ docs/
+   55  ls -ltr
+   56  cd
+   57  ls -ltr
+   58  ls -ltra
+   59  cd .jenkins/
+   60  ls -ltr
+   61  pwd
+   62  cd secret
+   63  ls -ltr
+   64  cd secrets/
+   65  ls -ltr
+   66  cat initialAdminPassword 
+   67  lsof -u root | wc -l
+   68  ulimit -a
+   69  history

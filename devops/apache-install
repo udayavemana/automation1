@@ -1,0 +1,44 @@
+#!/bin/sh
+#author:gangi
+#version:1.0
+#team:devops
+#purpose: apache installation
+echo "i am installaing apache" 
+
+yum install httpd -y
+echo "completed apache instalallation"
+echo "======================"
+echo "start apache"
+systemctl start httpd
+echo "apache started"
+ps -ef | grep httpd
+
+echo "creating the sample page"
+cd /var/www/html #apache pages lookup
+echo "this is test page" >index.html
+
+==============================
+#!/bin/sh
+#author:gangi
+#version:1.0
+#team:devops
+#purpose: apache installation
+echo "i am installaing apache" 
+
+yum install httpd -y
+echo "completed apache instalallation"
+echo "======================"
+echo "start apache"
+systemctl start httpd
+echo "apache started"
+ps -ef | grep httpd
+
+echo "creating the sample page"
+cd /tmp
+wget https://github.com/BlackrockDigital/startbootstrap-freelancer/archive/gh-pages.zip
+unzip gh-pages.zip
+cd startbootstrap-freelancer-gh-pages/
+cp -r * /var/www/html/
+
+#cd /var/www/html #apache pages lookup
+#echo "this is test page" >index.html

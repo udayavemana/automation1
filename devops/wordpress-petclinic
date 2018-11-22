@@ -1,0 +1,73 @@
+Download java
+cd /tmp
+
+wget http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/10g/r3/cluster/session_state/files/shoppingcart.zip
+unzip shoppingcart.zip
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+#install java
+rpm -ivh jdk-8u131-linux-x64.rpm
+
+#Download tomcat
+wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32-windows-x64.zip
+unzip apache-tomcat-8.5.32-windows-x64.zip
+mv apache-tomcat-8.5.32 /opt/tomcat
+chmod -R 755 /opt/tomcat
+
+cp /tmp/shoppingcart.war /opt/tomcat/webapps
+#start tomcat service
+/opt/tomcat/bin/startup.sh
+
+===============================
+A. For Tomcat : http://cliqr-appstore.s3.amazonaws.com/petclinic/petclinic.war
+
+B. For DB(MySQL) :  http://cliqr-appstore.s3.amazonaws.com/petclinic/petclinic.sql
+
+ 
+ou can write the script either in Python or Bash.
+
+ 
+
+TASK - Write an automation script to do the following process and result in a complete deployment of a petclinic application (a simple java web application).
+
+1.    Install Tomcat Server.
+
+2.    Configure Tomcat Server to start with http port as 80.
+
+3.    Install Mysql Database.
+  install the mysql
+ wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+ rpm -ivh mysql57-community-release-el7-7.noarch.rpm
+ yum install mysql-server*
+ 
+ Start the msyql server
+ service mysqld start
+  --->mysql -h localhost -u root -p 
+   -->SET GLOBAL validate_password.policy = 0;
+   ALTER USER 'root'@'localhost' IDENTIFIED BY '1qa2ws3ed';
+
+ 
+
+4.    Reset mysql root user password to welcome1 and run the provided Sql Script.
+
+5.    Deploy the given Application on tomcat.
+
+6.    Configure the application with database.
+
+7.     Start the server.
+
+Final result should be a script file which on running should make sure that application is up and running correctly.
+
+ 
+
+Application Binaries can be downloaded from:
+
+ 
+
+A. For Tomcat : http://cliqr-appstore.s3.amazonaws.com/petclinic/petclinic.war
+
+B. For DB(MySQL) :  http://cliqr-appstore.s3.amazonaws.com/petclinic/petclinic.sql
+
+ ==============================
+ 
+https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.12.zip

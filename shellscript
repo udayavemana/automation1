@@ -38,6 +38,9 @@ yum update -y
 yum install httpd wget unzip bind-utils -y
 
 
+url:
+clb-demo-140576925.us-west-2.elb.amazonaws.com/cicd.zip
+
 echo "this is my "
 =================================
 deploy_nginx.sh
@@ -145,6 +148,156 @@ yum install nginx -y
 netstat -anlp | grep ":80"
 
 ps -ef | grep nginx
+===============================
+
+#!/bin/bash
+
+oslist=filename
+
+for serername in `cat /opt/scripts/serverlist`
+#Connecting to remote servers
+
+ssh devopsadmin@$servername
+#redirecting output of uname into filename
+uname >>$oslist
+
+done
+
+#priting the os list file
+cat $oslist
+#send the email with subject with attachment(filename)
+mail -s "OS lists" someone@somewhere.com -a $oslist
+
+
+ping script
+=============
+#!/bin/sh
+ 
+# -q quiet
+# -c nb of pings to perform
+echo "enter the name"
+read name
+ping -q -c5 $name > /dev/null
+ 
+#check previous command successful or not
+if  [$? -eq 0 ]
+then
+  echo "ok"
+fi
 
 
 
+
+
+  #!/bin/bash
+  webs=/home/devopsadmin/scripts/serverslist
+
+ for name in `cat $webs`; do 
+  ping -q -c5 $name > /dev/null
+
+  if [ $? -eq 0 ]; then
+      echo "$name --> OK "
+  else
+      echo "$name-->FAIL"
+  fi
+done
+
+
+
+
+
+
+#!/bin/bash
+for i in `sec 0 255`; do 
+    ping -c 1 $i >/dev/null 2>&1 
+    if [ "$?" = "0" ]; then 
+echo -n "up" 
+else echo -n "down" 
+    fi
+done
+
+======================================
+sshlogin
+[root@bastionserver devopsadmin]# cat /tmp/login.sh
+#!/bin/bash
+echo "Connecting to servers"
+echo "Enter server you want to connect"
+read servername
+ssh -i /tmp/sshlogin.pem ec2-user@$servername
+[root@bastionserver devopsadmin]# 
+
+
+=======================================
+crontab-check
+
+#!/bin/bash
+ADMIN=Gangireddy_Danamreddy@mail.com
+crontab -l > /tmp/_file
+currentcron=/tmp/_file1
+diff /tmp/_file /tmp/_file1 |grep -v "You have mail in" >/tmp/lists
+[ ! -f "/tmp/lists" ] && { echo "Error: $0 file not found."; exit 2; }
+ 
+if [ -s "/tmp/lists" ] 
+then
+	echo "/tmp/lists has some data."
+        # do something as file has data
+        #send email logic
+        mail -s "New Crontab list on Host $(hostname) " $ADMIN < /tmp/lists
+else
+	echo "/tmp/lists is empty."
+        # do something as file is empty 
+        #no send email 
+fi
+=====================================================================
+crond service check
+
+#!/bin/bash
+
+###edit the following
+service=service_name
+email=user@domain.com
+###stop editing
+
+host=`hostname -f`
+if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
+then
+echo "$service is running"
+else
+/etc/init.d/$service start
+if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 ))
+then
+subject="$service at $host has been started"
+echo "$service at $host wasn't running and has been started" | mail -s "$subject" $email
+else
+subject="$service at $host is not running"
+echo "$service at $host is stopped and cannot be started!!!" | mail -s "$subject" $email
+fi
+fi
+===========================================================
+userdata -advanced-ansbile
+
+useradd devopsadmin
+echo "devopsadmin ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
+sed -i 's/PasswordAuthentication no/PasswordAuthentication Yes/g' /etc/ssh/sshd_config
+service sshd restart
+yum install unzip bind-utils wget telnet -y
+wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#curl http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -o epel-release-latest-7.noarch.rpm
+rpm -ivh epel-release-7*.rpm
+
+======================================================================
+13.232.139.49
+http://13.232.139.49/lb-1.wrf
+http://13.232.139.49/lb-2.wrf
+
+http://clb-demo-140576925.us-west-2.elb.amazonaws.com/cicd.zip
+
+
+
+
+hi team,
+
+i am free tier usage user and got bill payment to pay. I am the education user and trying to explore
+the basic servies in aws. Could you please wave off the amount and let me know.
+
+Thanks for the help

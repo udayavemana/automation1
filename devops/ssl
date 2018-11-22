@@ -1,0 +1,15 @@
+key
+openssl genrsa -des3 -out test.key 2048
+remove password
+openssl rsa -in test.key -out test.key
+Gen csr
+openssl req  -new -key test.key -out test.csr
+ls -ltr
+cat test.csr
+  
+self-signed
+openssl x509 -req -days 365 -in test.csr -signkey test.key -out test.crt
+ls -ltr
+cat test.key 
+cat test.crt 
+

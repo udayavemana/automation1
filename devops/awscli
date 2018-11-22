@@ -1,0 +1,38 @@
+
+
+#!/bin/bash
+yum update -y
+yum install unzip -y
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+------------------------------------------------
+#!/bin/bash
+yum update -y
+yum install unzip -y
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+
+#!/bin/bash
+sudo yum install perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA 
+sudo yum install zip unzip
+curl https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.2.zip -O
+unzip CloudWatchMonitoringScripts-1.2.2.zip && \
+rm CloudWatchMonitoringScripts-1.2.2.zip && \
+cd aws-scripts-mon
+cp awscreds.template awscreds.conf
+update the access key and secret key
+AWSAccessKeyId=my-access-key-id
+AWSSecretKey=my-secret-access-key
+
+./mon-put-instance-data.pl --mem-util --verify --verbose
+./mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --mem-used --mem-avail
+crontab -e 
+*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron
+
+./mon-put-instance-data.pl --mem-util --mem-used --mem-avail --auto-scaling=only
+./mon-put-instance-data.pl --mem-util --mem-used --mem-avail --aggregated=only
+./mon-get-instance-stats.pl --recent-hours=12
+

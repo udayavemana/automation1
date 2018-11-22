@@ -1,0 +1,23 @@
+  1  mkdir scripts
+    2  cd scripts/
+    3  ls -ltr
+    4  vi server.sh
+    5  sh server.sh
+    6  exit
+    7  exit
+    8  yum install nginx* -y
+    #Enable the EPEL
+    9  yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   10  yum install nginx* -y
+   11  cd /etc/nginx/
+   12  pwd
+   13  ls -ltr
+   14  pwd
+   15  vi nginx.conf (listen)
+   #start 
+systemctl start nginx
+#check nginx running or not
+ps -ef | grep -i nginx
+#check 80 is in use or not or listening or not
+ netstat -anlp | grep ":80"
+

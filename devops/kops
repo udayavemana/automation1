@@ -1,0 +1,52 @@
+https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes
+ec2
+======
+configure the aws cli --for the power user
+
+aws iam create-group --group-name kops
+
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --group-name kops
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonRoute53FullAccess --group-name kops
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess --group-name kops
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/IAMFullAccess --group-name kops
+aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AmazonVPCFullAccess --group-name kops
+
+aws iam create-user --user-name kops
+
+aws iam add-user-to-group --user-name kops --group-name kops
+
+aws iam create-access-key --user-name kops
+
+create the s3 bucket
+aws s3api create-bucket --bucket prefix-example-com-state-store --region us-east-1
+aws s3api put-bucket-versioning --bucket prefix-example-com-state-store-gangi  --versioning-configuration Status=Enabled
+
+
+Create the hosted zone in the aws route 53
+
+ID=$(uuidgen) && aws route53 create-hosted-zone --name subdomain.example.com --caller-reference $ID | jq .DelegationSet.NameServers
+
+it will return NS.
+
+update the NS in your registrar
+
+Test 
+dig ns subdomain.example.com
+
+export NAME=kops.awsmiddleware.in
+export KOPS_STATE_STORE=s3://prefix-example-com-state-store-gangi
+aws ec2 describe-availability-zones --region us-east-1
+
+kops create cluster --zones us-east-1a ${NAME}
+
+it will create all of the resources.
+
+kops update cluster ${NAME} --yes
+kubectl get nodes
+
+increase the nodes to 10 in autoscale group--nodes
+
+and terminate the master 
+
+
+

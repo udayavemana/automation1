@@ -1,0 +1,28 @@
+1alb
+3 apache
+
+1 alb
+3 tomcat
+
+1clb
+3 apache
+
+1 clb
+3 tomcat
+
+1clb 
+3 nginx
+
+==========================
+s3 as static
+enable security with aes and kms
+IAM role
+ssl
+rds
+lamp
+cloudformation
+s3
+alb
+clb
+vpc
+vpc peering

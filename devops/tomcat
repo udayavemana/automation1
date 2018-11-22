@@ -1,0 +1,47 @@
+#!/bin/bash
+yum install unzip wget -y
+
+#Download java
+cd /tmp
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/jav
+
+#install java
+rpm -ivh jdk-8u131-linux-x64.rpm
+
+#Download tomcat
+wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32-windows-x64.zip
+unzip apache-tomcat-8.5.32-windows-x64.zip
+mv apache-tomcat-8.5.32 /opt/tomcat
+chmod -R 755 /opt/tomcat
+#start tomcat service
+/opt/tomcat/bin/startup.sh
+
+===========================
+#!/bin/bash
+yum install unzip wget -y
+
+#Download java
+cd /tmp
+
+wget http://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/wls/10g/r3/cluster/session_state/files/shoppingcart.zip
+unzip shoppingcart.zip
+
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+#install java
+rpm -ivh jdk-8u131-linux-x64.rpm
+
+#Download tomcat
+wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32-windows-x64.zip
+unzip apache-tomcat-8.5.32-windows-x64.zip
+mv apache-tomcat-8.5.32 /opt/tomcat
+chmod -R 755 /opt/tomcat
+
+cp /tmp/shoppingcart.war /opt/tomcat/webapps
+#start tomcat service
+/opt/tomcat/bin/startup.sh
+
+
+
+
+
